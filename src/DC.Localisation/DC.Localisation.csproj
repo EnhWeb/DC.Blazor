@@ -9,11 +9,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>DC.Toast</AssemblyName>
-    <RootNamespace>DC.Toast</RootNamespace>
+    <AssemblyName>DC.Localisation</AssemblyName>
+    <RootNamespace>DC.Localisation</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>云企微商Blazor提示框组件</AssemblyTitle>
-    <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的提示框组件。</Description>
+    <AssemblyTitle>云企微商Blazor本地化组件</AssemblyTitle>
+    <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的本地化组件。</Description>
     <Company>深圳云企微商网络科技有限公司</Company>
     <Copyright>©2002-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
@@ -30,7 +30,7 @@
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
-    <PackageReleaseNotes>用于访问Blazor应用程序中的提示框组件</PackageReleaseNotes>
+    <PackageReleaseNotes>用于访问Blazor应用程序中的本地化组件</PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Blazor</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Blazor</RepositoryUrl>
@@ -51,7 +51,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DC.Toast.csproj.DotSettings" />
+    <None Remove="DC.Localisation.csproj.DotSettings" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +64,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview3-19153-02" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Build" Version="3.0.0-preview3-19153-02" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="content\" />
   </ItemGroup>
 
 </Project>
