@@ -5,7 +5,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <!-- 加下面这行,自定义代码分析规则集 -->
     <CodeAnalysisRuleSet>../../build/stylecop.ruleset</CodeAnalysisRuleSet>
-    <LangVersion>8</LangVersion>
     <!-- Disable warning for Controller/Action/Method not have block comment -->
     <NoWarn>$(NoWarn);1573;1591;1701;1702;1705;1712</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

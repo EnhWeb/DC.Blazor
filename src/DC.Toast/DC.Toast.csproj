@@ -2,7 +2,6 @@
   <Import Project="../../build/version.props" />
 
   <PropertyGroup>
-    <LangVersion>8</LangVersion>
     <!-- Disable warning for Controller/Action/Method not have block comment -->
     <NoWarn>1701;1702;1705;1591</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -10,8 +9,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>HaoCoding.Toast</AssemblyName>
-    <RootNamespace>HaoCoding.Toast</RootNamespace>
+    <AssemblyName>DC.Toast</AssemblyName>
+    <RootNamespace>DC.Toast</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>云企微商Blazor提示框类</AssemblyTitle>
     <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的提示框类。</Description>
@@ -32,11 +31,11 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>用于访问Blazor应用程序中的提示框类</PackageReleaseNotes>
-    <ProjectUrl>https://gitee.com/xingchensoft/HaoCoding</ProjectUrl>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Blazor</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
-    <RepositoryUrl>https://gitee.com/xingchensoft/HaoCoding</RepositoryUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Blazor</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>云企微商;好代码网;星尘;HaoCoding;$(AssemblyName);DotNetCore;AspNetCore;Core;Blazor;Razor Components;Toast;</PackageTags>
+    <PackageTags>DingChuan;DC;Berin;$(AssemblyName);DotNetCore;AspNetCore;Core;Blazor;Razor Components;Toast;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -52,7 +51,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="HaoCoding.Toast.csproj.DotSettings" />
+    <None Remove="DC.Toast.csproj.DotSettings" />
   </ItemGroup>
 
   <ItemGroup>

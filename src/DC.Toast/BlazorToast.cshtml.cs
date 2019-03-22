@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using System;
 
-namespace HaoCoding.Toast
+namespace DC.Toast
 {
     public class BlazorToastBase : ComponentBase
     {

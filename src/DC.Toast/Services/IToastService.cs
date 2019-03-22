@@ -4,7 +4,7 @@
 
 using System;
 
-namespace HaoCoding.Toast.Services
+namespace DC.Toast.Services
 {
     /// <summary>
     /// 提示框接口
