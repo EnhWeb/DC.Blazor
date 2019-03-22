@@ -36,9 +36,9 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>用于访问Blazor应用程序中的本地存储类库</PackageReleaseNotes>
-    <ProjectUrl>https://gitee.com/xingchensoft/HaoCoding</ProjectUrl>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Blazor</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
-    <RepositoryUrl>https://gitee.com/xingchensoft/HaoCoding</RepositoryUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Blazor</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>DingChuan;DC;Berin;$(AssemblyName);DotNetCore;AspNetCore;Core;Blazor;LocalStorage;Razor Components;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -76,11 +76,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="content\HaoCoding.LocalStorage.ts" />
+    <EmbeddedResource Remove="content\DC.LocalStorage.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Content\HaoCoding.LocalStorage.ts" />
+    <None Remove="Content\DC.LocalStorage.ts" />
     <None Remove="tsconfig.json" />
   </ItemGroup>
 
@@ -90,7 +90,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="content\HaoCoding.LocalStorage.ts" />
+    <TypeScriptCompile Include="content\DC.LocalStorage.ts" />
   </ItemGroup>
 
 </Project>

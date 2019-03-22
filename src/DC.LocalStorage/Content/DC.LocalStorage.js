@@ -9,8 +9,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var HaoCoding;
-(function (HaoCoding) {
+var DC;
+(function (DC) {
     var LocalStorage;
     (function (LocalStorage_1) {
         var LocalStorage = /** @class */ (function () {
@@ -46,15 +46,15 @@ var HaoCoding;
             var localStorage = {
                 LocalStorage: new LocalStorage()
             };
-            if (window['HaoCoding']) {
-                window['HaoCoding'] = __assign({}, window['HaoCoding'], localStorage);
+            if (window['DC']) {
+                window['DC'] = __assign({}, window['DC'], localStorage);
             }
             else {
-                window['HaoCoding'] = __assign({}, localStorage);
+                window['DC'] = __assign({}, localStorage);
             }
         }
         LocalStorage_1.Load = Load;
-    })(LocalStorage = HaoCoding.LocalStorage || (HaoCoding.LocalStorage = {}));
-})(HaoCoding || (HaoCoding = {}));
-HaoCoding.LocalStorage.Load();
-//# sourceMappingURL=HaoCoding.LocalStorage.js.map
+    })(LocalStorage = DC.LocalStorage || (DC.LocalStorage = {}));
+})(DC || (DC = {}));
+DC.LocalStorage.Load();
+//# sourceMappingURL=DC.LocalStorage.js.map
