@@ -51,7 +51,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="content\dc.Localisation.ts" />
     <None Remove="DC.Localisation.csproj.DotSettings" />
+    <None Remove="tsconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -62,12 +64,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview3-19153-02" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Build" Version="3.0.0-preview3-19153-02" PrivateAssets="all" />
+    <EmbeddedResource Remove="content\dc.Localisation.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="content\" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview3-19153-02" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Build" Version="3.0.0-preview3-19153-02" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
