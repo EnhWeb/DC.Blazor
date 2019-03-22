@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DC.LocalStorage\DC.LocalStorage.csproj" />
+    <ProjectReference Include="..\..\src\DC.Toast\DC.Toast.csproj" />
     <ProjectReference Include="..\Blazor.Shared\Blazor.Shared.csproj" />
   </ItemGroup>
 

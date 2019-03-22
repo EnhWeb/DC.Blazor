@@ -7,7 +7,9 @@ namespace Blazor.Client
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDCLocalStorage();
+            services.AddDCLocalStorage();  // 注册本地存储
+
+            services.AddDCToast();  // 注册提示框
         }
 
         public void Configure(IComponentsApplicationBuilder app)
