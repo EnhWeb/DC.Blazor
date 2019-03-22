@@ -1,4 +1,4 @@
-###  **DC.Blazor.LocalStorage** 
+###  **DC.LocalStorage** 
 
 是一个用于访问Blazor应用程序中前端的本地存储类。
 
@@ -10,11 +10,17 @@
 Install-Package DC.LocalStorage
 ```
 
+或者通过dotnet CLI
+
+```
+dotnet add package DC.LocalStorage
+```
+
 或者通过Visual Studio包管理器。
 
-###  **使用** 
+###  **安装** 
 
-1.首先在Startup.cs文件中使用服务集合注册本地存储服务
+1.首先在Startup.cs文件中使用服务集合注册服务
 
 ```
 public void ConfigureServices (IServiceCollection services)
@@ -23,7 +29,7 @@ public void ConfigureServices (IServiceCollection services)
 }
 ```
 
-2.接着在.cshtml文件中使用本地存储
+2.在.cshtml文件中使用
 
 
 ```
@@ -61,7 +67,6 @@ public void ConfigureServices (IServiceCollection services)
 
 }
 ```
-
 
 
 ### 标题**可用的API** 
