@@ -8,6 +8,11 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 注册提示框服务
+        /// </summary>
+        /// <param name="services">服务集合</param>
+        /// <returns></returns>
         public static IServiceCollection AddDCToast(this IServiceCollection services)
         {
             return services.AddScoped<IToastService, ToastService>();

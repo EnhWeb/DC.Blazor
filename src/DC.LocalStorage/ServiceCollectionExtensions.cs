@@ -14,7 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <summary>
         /// 注册前端本地存储服务
         /// </summary>
-        /// <param name="services"></param>
+        /// <param name="services">服务集合</param>
         /// <returns></returns>
         public static IServiceCollection AddDCLocalStorage(this IServiceCollection services)
         {
