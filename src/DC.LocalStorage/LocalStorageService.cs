@@ -6,7 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
-namespace HaoCoding.LocalStorage
+namespace DC.LocalStorage
 {
     /// <summary>
     /// 本地存储服务
@@ -42,7 +42,7 @@ namespace HaoCoding.LocalStorage
             if (e.Cancel)
                 return;
 
-            await _jSRuntime.InvokeAsync<object>("HaoCoding.LocalStorage.SetItem", key, Microsoft.JSInterop.Json.Serialize(data));
+            await _jSRuntime.InvokeAsync<object>("DC.LocalStorage.SetItem", key, Microsoft.JSInterop.Json.Serialize(data));
 
             RaiseOnChanged(key, e.OldValue, data);
         }
@@ -58,7 +58,7 @@ namespace HaoCoding.LocalStorage
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
 
-            var serialisedData = await _jSRuntime.InvokeAsync<string>("HaoCoding.LocalStorage.GetItem", key);
+            var serialisedData = await _jSRuntime.InvokeAsync<string>("DC.LocalStorage.GetItem", key);
 
             if (serialisedData == null)
                 return default(T);
@@ -75,20 +75,20 @@ namespace HaoCoding.LocalStorage
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
 
-            return _jSRuntime.InvokeAsync<object>("HaoCoding.LocalStorage.RemoveItem", key);
+            return _jSRuntime.InvokeAsync<object>("DC.LocalStorage.RemoveItem", key);
         }
 
         /// <summary>
         /// 异步清空存储
         /// </summary>
         /// <returns></returns>
-        public Task Clear() => _jSRuntime.InvokeAsync<object>("HaoCoding.LocalStorage.Clear");
+        public Task Clear() => _jSRuntime.InvokeAsync<object>("DC.LocalStorage.Clear");
 
         /// <summary>
         /// 异步获取存储数量
         /// </summary>
         /// <returns></returns>
-        public Task<int> Length() => _jSRuntime.InvokeAsync<int>("HaoCoding.LocalStorage.Length");
+        public Task<int> Length() => _jSRuntime.InvokeAsync<int>("DC.LocalStorage.Length");
 
         /// <summary>
         /// 获取指定序列的Key名称
@@ -114,7 +114,7 @@ namespace HaoCoding.LocalStorage
             if (e.Cancel)
                 return;
 
-            _jsInProcessRuntime.Invoke<object>("HaoCoding.LocalStorage.SetItem", key, Microsoft.JSInterop.Json.Serialize(data));
+            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.SetItem", key, Microsoft.JSInterop.Json.Serialize(data));
 
             RaiseOnChanged(key, e.OldValue, data);
         }
@@ -132,7 +132,7 @@ namespace HaoCoding.LocalStorage
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            var serialisedData = _jsInProcessRuntime.Invoke<string>("HaoCoding.LocalStorage.GetItem", key);
+            var serialisedData = _jsInProcessRuntime.Invoke<string>("DC.LocalStorage.GetItem", key);
 
             if (serialisedData == null)
                 return default(T);
@@ -151,7 +151,7 @@ namespace HaoCoding.LocalStorage
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            _jsInProcessRuntime.Invoke<object>("HaoCoding.LocalStorage.RemoveItem", key);
+            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.RemoveItem", key);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace HaoCoding.LocalStorage
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            _jsInProcessRuntime.Invoke<object>("HaoCoding.LocalStorage.Clear");
+            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.Clear");
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace HaoCoding.LocalStorage
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            return _jsInProcessRuntime.Invoke<int>("HaoCoding.LocalStorage.Length");
+            return _jsInProcessRuntime.Invoke<int>("DC.LocalStorage.Length");
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace HaoCoding.LocalStorage
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            return _jsInProcessRuntime.Invoke<string>("HaoCoding.LocalStorage.Key", index);
+            return _jsInProcessRuntime.Invoke<string>("DC.LocalStorage.Key", index);
         }
 
         public event EventHandler<ChangingEventArgs> Changing;

@@ -4,7 +4,7 @@
 
 using System;
 
-namespace HaoCoding.LocalStorage
+namespace DC.LocalStorage
 {
     /// <summary>
     /// 同步存储接口

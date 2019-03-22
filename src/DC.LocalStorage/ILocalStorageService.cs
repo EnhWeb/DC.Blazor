@@ -5,7 +5,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace HaoCoding.LocalStorage
+namespace DC.LocalStorage
 {
     /// <summary>
     /// 异步存储接口

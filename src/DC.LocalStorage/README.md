@@ -1,4 +1,4 @@
-###  **HaoCoding.Blazor.LocalStorage** 
+###  **DC.Blazor.LocalStorage** 
 
 是一个用于访问Blazor应用程序中前端的本地存储类。
 
@@ -7,7 +7,7 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package HaoCoding.Blazor.LocalStorage
+Install-Package DC.LocalStorage
 ```
 
 或者通过Visual Studio包管理器。
@@ -19,7 +19,7 @@ Install-Package HaoCoding.Blazor.LocalStorage
 ```
 public void ConfigureServices (IServiceCollection services)
 {
-    services.AddHaoCodingLocalStorage();
+    services.AddDCLocalStorage();
 }
 ```
 
@@ -27,7 +27,7 @@ public void ConfigureServices (IServiceCollection services)
 
 
 ```
-@inject HaoCoding.LocalStorage.ILocalStorageService localStorage
+@inject DC.LocalStorage.ILocalStorageService localStorage
 
 @functions {
 
@@ -44,7 +44,7 @@ public void ConfigureServices (IServiceCollection services)
 或者在_ViewImports.cshtml添加
 
 ```
-@using HaoCoding.LocalStorage
+@using DC.LocalStorage
 ```
 然后再在.cshtml文件中使用
 
@@ -76,6 +76,6 @@ public void ConfigureServices (IServiceCollection services)
 
 ###  **说明** 
 
-1. 所有在ILocalStorageService中的方法都是异步的，如果您使用Blazor（不是Razor组件），您可以选择注入HaoCoding.LocalStorage.ISyncStorageService来选择允许您避免使用async/await的同步API。对于任一接口，方法名称都相同。
-2. HaoCoding.LocalStorage方法将为您处理数据的序列化和反序列化。
+1. 所有在ILocalStorageService中的方法都是异步的，如果您使用Blazor（不是Razor组件），您可以选择注入DC.LocalStorage.ISyncStorageService来选择允许您避免使用async/await的同步API。对于任一接口，方法名称都相同。
+2. DC.LocalStorage方法将为您处理数据的序列化和反序列化。
 
