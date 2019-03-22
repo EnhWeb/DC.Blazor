@@ -1,0 +1,27 @@
+﻿@page "/localisation"
+@using System.Globalization
+@inject ILocalisationService localisationService
+
+<p>The current date and time is: <strong>@DateTime.Now</strong></p>
+<hr />
+<p>Current Culture: <strong>@CultureInfo.CurrentUICulture.DisplayName</strong></p>
+<p>Current Culture: <strong>@culture.DisplayName</strong></p>
+<p>Current Culture Code: <strong>@CultureInfo.CurrentCulture.Name</strong></p>
+<p>Current Culture Code: <strong>@culture.Name</strong></p>
+<p>Current UI Culture Code: <strong>@CultureInfo.CurrentUICulture.Name</strong></p>
+<p>Current UI Culture Code: <strong>@culture.Name</strong></p>
+<p>Current Culture Currency Symbol: <strong>@CultureInfo.CurrentUICulture.NumberFormat.CurrencySymbol</strong></p>
+<p>Current Culture Currency Symbol: <strong>@culture.NumberFormat.CurrencySymbol</strong></p>
+<p>Current Culture DateTime Pattern: <strong>@CultureInfo.CurrentUICulture.DateTimeFormat.FullDateTimePattern</strong></p>
+<p>Current Culture DateTime Pattern: <strong>@culture.DateTimeFormat.FullDateTimePattern</strong></p>
+
+@functions{
+
+    CultureInfo culture { get; set; }
+
+    protected override void OnInit()
+    {
+        culture = localisationService.Register();
+        Console.WriteLine(culture.DisplayName);
+    }
+}

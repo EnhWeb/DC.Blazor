@@ -18,7 +18,7 @@ dotnet add package DC.LocalStorage
 
 或者通过Visual Studio包管理器。
 
-###  **安装** 
+###  **建立** 
 
 1.首先在Startup.cs文件中使用服务集合注册服务
 
