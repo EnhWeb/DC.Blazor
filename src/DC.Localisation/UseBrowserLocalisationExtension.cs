@@ -2,20 +2,26 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
 using System.Globalization;
+using System.Linq;
 
 namespace Microsoft.AspNetCore.Components.Builder
 {
+    /// <summary>
+    /// 添加和使用本地化的扩展方法
+    /// </summary>
     public static class UseBrowserLocalisationExtension
     {
         /// <summary>
         /// 注册前端本地化服务
         /// </summary>
         /// <param name="services">服务集合</param>
-        /// <returns></returns>
-        public static IServiceCollection AddDCLocalisation(this IServiceCollection services)
+        public static void AddDCLocalisation(this IServiceCollection services)
         {
-            return services
+            if (services.FirstOrDefault(d => d.ServiceType == typeof(ILocalisationService)) == null)
+            {
+                services
                 .AddScoped<ILocalisationService, LocalisationService>();
+            }
         }
 
         /// <summary>
