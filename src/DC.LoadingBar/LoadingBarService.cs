@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DC.LoadingBar
 {
-    public class LoadingBar
+    public class LoadingBarService
     {
     }
 }

@@ -23,7 +23,7 @@ namespace Blazor.Client
             app.UseDCLocalisationExtension();  // 启动本地化操作
 
             app.UseDCHttpClientInterceptor();  // 启用Http请求拦截器
-            var httpInterceptor = app.Services.GetService<HttpClientInterceptor>();
+            var httpInterceptor = app.Services.GetService<HttpClientInterceptorService>();
             httpInterceptor.BeforeSend += HttpInterceptor_BeforeSend;
             httpInterceptor.AfterSend += HttpInterceptor_AfterSend;
 

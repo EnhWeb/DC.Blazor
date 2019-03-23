@@ -38,29 +38,47 @@ public void Configure(IComponentsApplicationBuilder app)
 }
 ```
 
-2.在_ViewImports.cshtml文件中引用
+2.可以在任何可以从DI窗口获取HttpClientInterceptor服务的地方订阅所有发送HTTP请求之前/之后发生的事件。
 
 ```
-@using DC
-@using DC.Toast.Services
-
-@addTagHelper *, DC.Toast
-```
-
-3.在MainLayout.cshtml中注册Toast组件
-
-```
-<BlazorToasts />
+@using DC.HttpClientInterceptor
+@inject HttpClientInterceptorService Interceptor
 ```
 
 ###  **用法** 
 
 ```
-@page "/toast"
-@inject IToastService toastService
+@using DC.HttpClientInterceptor
+@inject HttpClientInterceptorService Interceptor
 
-<button class="btn btn-info" onclick="@(() => toastService.ShowToast(ToastLevel.Info, "I'm an INFO message"))">Info Toast</button>
-<button class="btn btn-success" onclick="@(() => toastService.ShowToast(ToastLevel.Success, "I'm a SUCCESS message with a custom heading", "Congratulations!"))">Success Toast</button>
-<button class="btn btn-warning" onclick="@(() => toastService.ShowToast(ToastLevel.Warning, "I'm a WARNING message"))">Warning Toast</button>
-<button class="btn btn-danger" onclick="@(() => toastService.ShowToast(ToastLevel.Error, "I'm an ERROR message"))">Error Toast</button>
+@functions {
+  protected override void OnInit()
+  {
+    this.Interceptor.BeforeSend += Interceptor_BeforeSend;
+	this.Interceptor.AfterSend += Interceptor_AfterSend;
+  }
+
+  void Interceptor_BeforeSend(object sender, EventArgs e)
+  {
+    // Do something here what you want to do.
+  }
+
+  void Interceptor_AfterSend(object sender, EventArgs e)
+  {
+    // Do something here what you want to do.
+  }
+
+```
+
+###  **注意** 
+
+如果您使用Blazor(.cshtml)中的HttpClientInterceptor订阅的BeforeSend/AfterSend事件，则应在组件被区分时取消订阅事件。要做到这一点，您应该在该组件中实现接口IDisposable。
+
+```
+@implements IDisposable
+
+public void Dispose()
+{
+  this.Interceptor.BeforeSend -= Interceptor_BeforeSend;
+}
 ```

@@ -47,14 +47,10 @@ public void ConfigureServices (IServiceCollection services)
 
 ```
 
-或者在_ViewImports.cshtml添加
+或者在.cshtml文件中使用
 
 ```
 @using DC.LocalStorage
-```
-然后再在.cshtml文件中使用
-
-```
 @inject ILocalStorageService localStorage
 
 @functions {

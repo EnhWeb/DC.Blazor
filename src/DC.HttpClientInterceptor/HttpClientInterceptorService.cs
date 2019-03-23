@@ -11,7 +11,7 @@ namespace DC.HttpClientInterceptor
     /// <summary>
     /// 拦截Blazor客户端应用程序上的所有发送的HTTP请求。
     /// </summary>
-    public class HttpClientInterceptor : HttpMessageHandler
+    public class HttpClientInterceptorService : HttpMessageHandler
     {
         /// <summary>
         /// 在HTTP请求发送之前发生。
@@ -27,7 +27,7 @@ namespace DC.HttpClientInterceptor
 
         private readonly MethodInfo SendAsyncMethod;
 
-        internal HttpClientInterceptor()
+        internal HttpClientInterceptorService()
         {
             SendAsyncMethod = typeof(HttpMessageHandler).GetMethod(nameof(SendAsync), BindingFlags.Instance | BindingFlags.NonPublic);  // 获取父类的SendAsync方法
         }

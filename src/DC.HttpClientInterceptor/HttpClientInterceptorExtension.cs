@@ -16,9 +16,9 @@ namespace Microsoft.Extensions.DependencyInjection
         public static void AddDCHttpClientInterceptor(this IServiceCollection services)
         {
             // 已经注册过则不再注册
-            if (services.FirstOrDefault(d => d.ServiceType == typeof(HttpClientInterceptor)) == null)
+            if (services.FirstOrDefault(d => d.ServiceType == typeof(HttpClientInterceptorService)) == null)
             {
-                services.AddSingleton(_ => new HttpClientInterceptor());
+                services.AddSingleton(_ => new HttpClientInterceptorService());
             }
         }
 
@@ -29,7 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IComponentsApplicationBuilder UseDCHttpClientInterceptor(this IComponentsApplicationBuilder app)
         {
-            var interceptor = app.Services.GetService<HttpClientInterceptor>();
+            var interceptor = app.Services.GetService<HttpClientInterceptorService>();
             interceptor.Install(app);
 
             return app;
