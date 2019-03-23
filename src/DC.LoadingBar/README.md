@@ -35,3 +35,7 @@ public void Configure(IComponentsApplicationBuilder app)
     app.UseDCLoadingBar();
 }
 ```
+
+通过上面操作即可直接使用。
+
+ **注意：** 该方法仅适用于有http请求的页面，且只有第一次打开相关的页面才有进度条，打开之后再次打开是看不到的。
