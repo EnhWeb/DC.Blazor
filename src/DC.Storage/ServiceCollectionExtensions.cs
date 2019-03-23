@@ -3,7 +3,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 using System.Linq;
-using DC.LocalStorage;
+using DC.Storage;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -16,13 +16,17 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 注册前端本地存储服务
         /// </summary>
         /// <param name="services">服务集合</param>
-        public static void AddDCLocalStorage(this IServiceCollection services)
+        public static void AddDCStorage(this IServiceCollection services)
         {
             if (services.FirstOrDefault(d => d.ServiceType == typeof(ILocalStorageService)) == null)
             {
                 services
                 .AddScoped<ILocalStorageService, LocalStorageService>()  // 每次请求都会获取一个新的实例，但同一个请求内获取多次都只会得到相同的实例。
                 .AddScoped<ISyncLocalStorageService, LocalStorageService>();
+
+                services
+                .AddScoped<ISessionStorageService, SessionStorageService>()
+                .AddScoped<ISyncSessionStorageService, SessionStorageService>();
             }
         }
     }

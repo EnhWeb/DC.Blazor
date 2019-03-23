@@ -19,7 +19,7 @@
     <ProjectReference Include="..\..\src\DC.HttpClientInterceptor\DC.HttpClientInterceptor.csproj" />
     <ProjectReference Include="..\..\src\DC.LoadingBar\DC.LoadingBar.csproj" />
     <ProjectReference Include="..\..\src\DC.Localisation\DC.Localisation.csproj" />
-    <ProjectReference Include="..\..\src\DC.LocalStorage\DC.LocalStorage.csproj" />
+    <ProjectReference Include="..\..\src\DC.Storage\DC.Storage.csproj" />
     <ProjectReference Include="..\..\src\DC.Toast\DC.Toast.csproj" />
     <ProjectReference Include="..\Blazor.Shared\Blazor.Shared.csproj" />
   </ItemGroup>

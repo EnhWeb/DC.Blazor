@@ -3,20 +3,18 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 using System;
-using System.Threading.Tasks;
 
-namespace DC.LocalStorage
+namespace DC.Storage
 {
     /// <summary>
-    /// 异步存储接口
+    /// 同步存储接口
     /// </summary>
-    public interface ILocalStorageService
+    public interface ISyncLocalStorageService
     {
         /// <summary>
         /// 清空存储
         /// </summary>
-        /// <returns></returns>
-        Task Clear();
+        void Clear();
 
         /// <summary>
         /// 获取指定键值的存储内容
@@ -24,34 +22,33 @@ namespace DC.LocalStorage
         /// <typeparam name="T">对象</typeparam>
         /// <param name="key">键值</param>
         /// <returns>对象</returns>
-        Task<T> GetItem<T>(string key);
+        T GetItem<T>(string key);
 
         /// <summary>
         /// 获取指定序列的Key名称
         /// </summary>
-        /// <param name="index">序号</param>
+        /// <param name="index"></param>
         /// <returns></returns>
-        Task<string> Key(int index);
+        string Key(int index);
 
         /// <summary>
-        /// 数量
+        /// 缓存数量
         /// </summary>
         /// <returns></returns>
-        Task<int> Length();
+        int Length();
 
         /// <summary>
         /// 移除指定项
         /// </summary>
         /// <param name="key">键值</param>
-        Task RemoveItem(string key);
+        void RemoveItem(string key);
 
         /// <summary>
         /// 存储
         /// </summary>
         /// <param name="key">键值</param>
         /// <param name="data">内容</param>
-        /// <returns></returns>
-        Task SetItem(string key, object data);
+        void SetItem(string key, object data);
 
         /// <summary>
         /// 修改中

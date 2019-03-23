@@ -4,12 +4,12 @@
 
 using System;
 
-namespace DC.LocalStorage
+namespace DC.Storage
 {
     /// <summary>
     /// 同步存储接口
     /// </summary>
-    public interface ISyncLocalStorageService
+    public interface ISyncSessionStorageService
     {
         /// <summary>
         /// 清空存储

@@ -6,21 +6,22 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
-namespace DC.LocalStorage
+namespace DC.Storage
 {
     /// <summary>
     /// 本地存储服务
     /// </summary>
-    public class LocalStorageService : ILocalStorageService, ISyncLocalStorageService
+    public class SessionStorageService : ISessionStorageService, ISyncSessionStorageService
     {
         private readonly IJSRuntime _jSRuntime;  //表示可以调度调用的JavaScript运行时的实例。
         private readonly IJSInProcessRuntime _jsInProcessRuntime;  //表示可以调度调用的JavaScript运行时的实例。
+        private string storageType = "sessionStorage";
 
         /// <summary>
         /// 实例化
         /// </summary>
         /// <param name="jSRuntime"></param>
-        public LocalStorageService(IJSRuntime jSRuntime)
+        public SessionStorageService(IJSRuntime jSRuntime)
         {
             _jSRuntime = jSRuntime;
             _jsInProcessRuntime = jSRuntime as IJSInProcessRuntime;
@@ -42,7 +43,7 @@ namespace DC.LocalStorage
             if (e.Cancel)
                 return;
 
-            await _jSRuntime.InvokeAsync<object>("DC.LocalStorage.SetItem", key, Json.Serialize(data));
+            await _jSRuntime.InvokeAsync<object>("DC.Storage.SetItem", storageType, key, Json.Serialize(data));
 
             RaiseOnChanged(key, e.OldValue, data);
         }
@@ -58,7 +59,7 @@ namespace DC.LocalStorage
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
 
-            var serialisedData = await _jSRuntime.InvokeAsync<string>("DC.LocalStorage.GetItem", key);
+            var serialisedData = await _jSRuntime.InvokeAsync<string>("DC.Storage.GetItem", storageType, key);
 
             if (serialisedData == null)
                 return default(T);
@@ -75,34 +76,34 @@ namespace DC.LocalStorage
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
 
-            return _jSRuntime.InvokeAsync<object>("DC.LocalStorage.RemoveItem", key);
+            return _jSRuntime.InvokeAsync<object>("DC.Storage.RemoveItem", storageType, key);
         }
 
         /// <summary>
         /// 异步清空存储
         /// </summary>
         /// <returns></returns>
-        public Task Clear() => _jSRuntime.InvokeAsync<object>("DC.LocalStorage.Clear");
+        public Task Clear() => _jSRuntime.InvokeAsync<object>("DC.Storage.Clear", storageType);
 
         /// <summary>
         /// 异步获取存储数量
         /// </summary>
         /// <returns></returns>
-        public Task<int> Length() => _jSRuntime.InvokeAsync<int>("DC.LocalStorage.Length");
+        public Task<int> Length() => _jSRuntime.InvokeAsync<int>("DC.Storage.Length", storageType);
 
         /// <summary>
         /// 获取指定序列的Key名称
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public Task<string> Key(int index) => _jSRuntime.InvokeAsync<string>("", index);
+        public Task<string> Key(int index) => _jSRuntime.InvokeAsync<string>("DC.Storage.Key", storageType, index);
 
         /// <summary>
         /// 同步存储
         /// </summary>
         /// <param name="key">键值</param>
         /// <param name="data">内容</param>
-        void ISyncLocalStorageService.SetItem(string key, object data)
+        void ISyncSessionStorageService.SetItem(string key, object data)
         {
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
@@ -114,7 +115,7 @@ namespace DC.LocalStorage
             if (e.Cancel)
                 return;
 
-            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.SetItem", key, Json.Serialize(data));
+            _jsInProcessRuntime.Invoke<object>("DC.Storage.SetItem", storageType, key, Json.Serialize(data));
 
             RaiseOnChanged(key, e.OldValue, data);
         }
@@ -125,14 +126,14 @@ namespace DC.LocalStorage
         /// <typeparam name="T">对象</typeparam>
         /// <param name="key">键值</param>
         /// <returns>对象</returns>
-        T ISyncLocalStorageService.GetItem<T>(string key)
+        T ISyncSessionStorageService.GetItem<T>(string key)
         {
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            var serialisedData = _jsInProcessRuntime.Invoke<string>("DC.LocalStorage.GetItem", key);
+            var serialisedData = _jsInProcessRuntime.Invoke<string>("DC.Storage.GetItem", storageType, key);
 
             if (serialisedData == null)
                 return default(T);
@@ -144,37 +145,37 @@ namespace DC.LocalStorage
         /// 同步移除指定项
         /// </summary>
         /// <param name="key">键值</param>
-        void ISyncLocalStorageService.RemoveItem(string key)
+        void ISyncSessionStorageService.RemoveItem(string key)
         {
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.RemoveItem", key);
+            _jsInProcessRuntime.Invoke<object>("DC.Storage.RemoveItem", storageType, key);
         }
 
         /// <summary>
         /// 同步清空存储
         /// </summary>
-        void ISyncLocalStorageService.Clear()
+        void ISyncSessionStorageService.Clear()
         {
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.Clear");
+            _jsInProcessRuntime.Invoke<object>("DC.Storage.Clear", storageType);
         }
 
         /// <summary>
         /// 同步获取存储数量
         /// </summary>
         /// <returns></returns>
-        int ISyncLocalStorageService.Length()
+        int ISyncSessionStorageService.Length()
         {
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            return _jsInProcessRuntime.Invoke<int>("DC.LocalStorage.Length");
+            return _jsInProcessRuntime.Invoke<int>("DC.Storage.Length", storageType);
         }
 
         /// <summary>
@@ -182,12 +183,12 @@ namespace DC.LocalStorage
         /// </summary>
         /// <param name="index">序号</param>
         /// <returns></returns>
-        string ISyncLocalStorageService.Key(int index)
+        string ISyncSessionStorageService.Key(int index)
         {
             if (_jsInProcessRuntime == null)
                 throw new InvalidOperationException("IJSInProcessRunTime不可用");
 
-            return _jsInProcessRuntime.Invoke<string>("DC.LocalStorage.Key", index);
+            return _jsInProcessRuntime.Invoke<string>("DC.Storage.Key", storageType, index);
         }
 
         public event EventHandler<ChangingEventArgs> Changing;
@@ -210,7 +211,7 @@ namespace DC.LocalStorage
             var e = new ChangingEventArgs
             {
                 Key = key,
-                OldValue = ((ISyncLocalStorageService)this).GetItem<object>(key),
+                OldValue = ((ISyncSessionStorageService)this).GetItem<object>(key),
                 NewValue = data
             };
 

@@ -12,8 +12,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>DC.LocalStorage</AssemblyName>
-    <RootNamespace>DC.LocalStorage</RootNamespace>
+    <AssemblyName>DC.Storage</AssemblyName>
+    <RootNamespace>DC.Storage</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>云企微商Blazor本地存储组件</AssemblyTitle>
     <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的前端本地存储组件。</Description>
@@ -55,7 +55,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DC.LocalStorage.csproj.DotSettings" />
+    <None Remove="DC.Storage.csproj.DotSettings" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,11 +75,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="content\DC.LocalStorage.ts" />
+    <!--<EmbeddedResource Remove="content\DC.Storage.ts" />-->
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Content\DC.LocalStorage.ts" />
+    <!--<None Remove="Content\DC.Storage.ts" />-->
     <None Remove="tsconfig.json" />
   </ItemGroup>
 
@@ -89,7 +89,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="content\DC.LocalStorage.ts" />
+    <!--<TypeScriptCompile Include="content\DC.Storage.ts" />-->
   </ItemGroup>
 
 </Project>
