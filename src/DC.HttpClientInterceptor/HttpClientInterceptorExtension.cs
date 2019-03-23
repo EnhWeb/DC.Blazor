@@ -25,7 +25,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <summary>
         /// 将Http请求拦截服务安装到运行时宿主环境。
         /// </summary>
-        /// <param name="app">宿主环境</param>
+        /// <param name="app">运行时宿主环境</param>
         /// <returns></returns>
         public static IComponentsApplicationBuilder UseDCHttpClientInterceptor(this IComponentsApplicationBuilder app)
         {

@@ -16,6 +16,8 @@ namespace Blazor.Client
             services.AddDCLocalisation(); // 注册本地化
 
             services.AddDCHttpClientInterceptor(); // 注册Http请求拦截器
+
+            services.AddDCLoadingBar();  // 注册顶部加载进度组件
         }
 
         public void Configure(IComponentsApplicationBuilder app)
@@ -23,9 +25,11 @@ namespace Blazor.Client
             app.UseDCLocalisationExtension();  // 启动本地化操作
 
             app.UseDCHttpClientInterceptor();  // 启用Http请求拦截器
-            var httpInterceptor = app.Services.GetService<HttpClientInterceptorService>();
-            httpInterceptor.BeforeSend += HttpInterceptor_BeforeSend;
-            httpInterceptor.AfterSend += HttpInterceptor_AfterSend;
+            //var httpInterceptor = app.Services.GetService<HttpClientInterceptorService>();
+            //httpInterceptor.BeforeSend += HttpInterceptor_BeforeSend;
+            //httpInterceptor.AfterSend += HttpInterceptor_AfterSend;
+
+            app.UseDCLoadingBar();
 
             app.AddComponent<App>("app");
         }

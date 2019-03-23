@@ -1,4 +1,5 @@
 ﻿using DC.LoadingBar;
+using Microsoft.AspNetCore.Components.Builder;
 using System.Linq;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -20,6 +21,26 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 services.AddSingleton<LoadingBarService>();
             }
+        }
+
+        private static bool Installed;
+
+        /// <summary>
+        /// 将网页加载顶部进度条服务安装到运行时宿主环境。
+        /// </summary>
+        /// <param name="app">运行时宿主环境</param>
+        /// <returns></returns>
+        public static IComponentsApplicationBuilder UseDCLoadingBar(this IComponentsApplicationBuilder app)
+        {
+            if (Installed) return app;
+
+            app.UseDCHttpClientInterceptor();
+
+            var loadingBar = app.Services.GetService<LoadingBarService>();
+            loadingBar.ConstructDOM();
+
+            Installed = true;
+            return app;
         }
 
     }

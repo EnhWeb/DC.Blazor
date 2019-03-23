@@ -114,7 +114,7 @@ namespace DC.LocalStorage
             if (e.Cancel)
                 return;
 
-            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.SetItem", key, Microsoft.JSInterop.Json.Serialize(data));
+            _jsInProcessRuntime.Invoke<object>("DC.LocalStorage.SetItem", key, Json.Serialize(data));
 
             RaiseOnChanged(key, e.OldValue, data);
         }
@@ -137,7 +137,7 @@ namespace DC.LocalStorage
             if (serialisedData == null)
                 return default(T);
 
-            return Microsoft.JSInterop.Json.Deserialize<T>(serialisedData);
+            return Json.Deserialize<T>(serialisedData);
         }
 
         /// <summary>
