@@ -58,11 +58,15 @@ public void ConfigureServices(IServiceCollection services)
     services.AddDCLocalisation();
 }
 ```
-2.在_ViewImports.cshtml中添加引用```@using DC.Localisation```
 
-3.在.cshtml中添加引用```@inject ILocalisationService localisationService```
+2.在.cshtml中添加引用
+```
+@using DC.Localisation
+@inject ILocalisationService localisationService
+```
 
 ```
+@using DC.Localisation
 @inject ILocalisationService localisationService
 
 <p>The current date and time is: <strong>@DateTime.Now</strong></p>
