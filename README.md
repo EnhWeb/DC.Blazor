@@ -10,4 +10,4 @@
 
  **DC.HttpClientInterceptor** : Blazor前端Http请求拦截器
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143458_244fc8de_130171.png "TIM图片20190323143331.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143458_244fc8de_130171.png "演示图片")
