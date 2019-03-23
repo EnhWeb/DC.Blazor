@@ -7,3 +7,5 @@
  **DC.Toast** : Blazor前端提示框组件
 
  **DC.Localisation** : Blazor前端本地化组件
+
+ **DC.HttpClientInterceptor** : Blazor前端Http请求拦截器
