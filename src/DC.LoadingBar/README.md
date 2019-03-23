@@ -33,3 +33,5 @@ public void Configure(IComponentsApplicationBuilder app)
     app.UseDCLoadingBar();
 }
 ```
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143832_e9beece3_130171.gif "演示图片")
