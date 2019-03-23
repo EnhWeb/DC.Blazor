@@ -75,10 +75,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--<EmbeddedResource Remove="content\DC.Storage.ts" />-->
-  </ItemGroup>
-
-  <ItemGroup>
     <!--<None Remove="Content\DC.Storage.ts" />-->
     <None Remove="tsconfig.json" />
   </ItemGroup>
@@ -86,10 +82,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview3-19153-02" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Build" Version="3.0.0-preview3-19153-02" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!--<TypeScriptCompile Include="content\DC.Storage.ts" />-->
   </ItemGroup>
 
 </Project>
