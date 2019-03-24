@@ -2,6 +2,9 @@
 
 交流QQ：2505111990  QQ群：774046050
 
+每个组件的使用说明请过入各项目查看说明文件，Samples里的Demo也有各组件的使用方法。
+
+
  **DC.LocalStorage** : Blazor前端本地存储组件
 
  **DC.Toast** : Blazor前端提示框组件
