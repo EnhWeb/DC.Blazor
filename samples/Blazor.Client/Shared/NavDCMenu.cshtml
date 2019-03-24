@@ -1,0 +1,59 @@
+﻿@using DC.Menu
+@addTagHelper *, DC.Menu
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Blazor</a>
+</div>
+
+@*<DCMenu>
+    <BlazoredMenuItem>
+        <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
+    </BlazoredMenuItem>
+    <BlazoredMenuItem>
+        <NavLink href="counter">Counter</NavLink>
+    </BlazoredMenuItem>
+    <BlazoredSubMenu Header="Sub Menu">
+        <BlazoredMenuItem>
+            <NavLink href="counter">Counter</NavLink>
+        </BlazoredMenuItem>
+        <BlazoredMenuItem>
+            <NavLink href="fetchdata">Fetch data</NavLink>
+        </BlazoredMenuItem>
+    </BlazoredSubMenu>
+    <BlazoredMenuItem>
+        <NavLink href="fetchdata">Fetch data</NavLink>
+    </BlazoredMenuItem>
+</DCMenu>*@
+
+<DCMenu MenuBuilder="@MenuBuilder" />
+
+<DCMenu ChildContent="@ChildContent" />
+
+
+@functions {
+        MenuBuilder MenuBuilder = new MenuBuilder();
+
+        RenderFragment ChildContent = null;
+
+    protected override void OnInit()
+    {
+        MenuBuilder.AddItem(1, "Home", "/")
+                   .AddItem(2, "Counter1", "counter", IsEnabled: false)
+                   .AddSubMenu(3, "Sub Menu", new MenuBuilder().AddItem(1, "Counter", "counter")
+                                                               .AddItem(2, "Fetch Data", "fetchdata", IsEnabled: false)
+                                                               .AddItem(3, "You Can't See Me", "invisible", IsVisible: false))
+                   .AddItem(4, "FetchData", "fetchdata");
+
+        ChildContent = new RenderFragment(b =>
+        {
+            b.OpenComponent<DCMenuItem>(0);
+            b.AddAttribute(1, "IsEnabled", true);
+            b.AddAttribute(2, "IsVisible", true);
+            b.AddAttribute(3, "ChildContent", new RenderFragment(c =>
+            {
+                c.AddContent(4, "测试");
+            }));
+            b.CloseComponent();
+        });
+    }
+}
