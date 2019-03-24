@@ -13,8 +13,8 @@
 
  **DC.HttpClientInterceptor** : Blazor前端Http请求拦截器
 
- **DC.LoadingBar** : 网页加载顶部进度条
+ **DC.LoadingBar** : Blazor网页加载顶部进度条
 
- **DC.Menu** : 自定义菜单组件
+ **DC.Menu** : Blazor自定义菜单组件
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143458_244fc8de_130171.png "演示图片")
