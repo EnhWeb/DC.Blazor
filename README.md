@@ -10,4 +10,6 @@
 
  **DC.HttpClientInterceptor** : Blazor前端Http请求拦截器
 
+ **DC.LoadingBar** : 网页加载顶部进度条
+
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143458_244fc8de_130171.png "演示图片")
