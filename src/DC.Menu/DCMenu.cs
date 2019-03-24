@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.RenderTree;
+using Microsoft.AspNetCore.Components.Routing;
 using System;
 
 namespace DC.Menu
@@ -76,7 +77,26 @@ namespace DC.Menu
 
         private int BuildSubMenu(RenderTreeBuilder subMenuBuilder, int index, MenuItem item)
         {
-            index++;
+            subMenuBuilder.OpenComponent<DCSubMenu>(index++);
+            subMenuBuilder.AddAttribute(index++, "Header", item.Title);
+
+            if (!item.IsEnabled)
+            {
+                subMenuBuilder.AddAttribute(index++, "disabled", "true");
+            }
+
+            subMenuBuilder.AddAttribute(index++, "ChildContent", (RenderFragment)((subMenuContentBuilder) =>
+            {
+                var subMenuItems = item.MenuItems.Build(x => x.Position);
+
+                foreach (var subMenuItem in subMenuItems)
+                {
+                    index = BuildMenuItem(subMenuContentBuilder, index, subMenuItem);
+                }
+            }));
+
+            subMenuBuilder.CloseComponent();
+
             return index;
         }
 
@@ -86,7 +106,44 @@ namespace DC.Menu
 
             if (item.IsVisible)
             {
+                if (item.IsEnabled)
+                {
+                    menuItemBuilder.AddAttribute(index++, "ChildContent", (RenderFragment)((menuItemContentBuilder) => 
+                    {
+                        menuItemContentBuilder.OpenComponent<NavLink>(index++);
+                        menuItemContentBuilder.AddAttribute(index++, "href", item.Link);
 
+                        if (item.Link?.Trim() == "/")
+                        {
+                            menuItemContentBuilder.AddAttribute(index++, "Match", NavLinkMatch.All);
+                        }
+
+                        menuItemContentBuilder.AddAttribute(index++, "ChildContent", (RenderFragment)((navLinkContentBuilder) => 
+                        {
+                            navLinkContentBuilder.AddContent(index++, item.Title);
+                        }));
+
+                        menuItemContentBuilder.AddContent(index++, item.Title);
+
+                        menuItemContentBuilder.CloseComponent();
+                    }));
+                }
+                else
+                {
+                    menuItemBuilder.AddAttribute(index++, "IsEnabled", item.IsEnabled);
+                    menuItemBuilder.AddAttribute(index++, "ChildContent", (RenderFragment)((menuItemContentBuilder) =>
+                    {
+                        menuItemContentBuilder.AddContent(index++, item.Title);
+                    }));
+                }
+            }
+            else
+            {
+                menuItemBuilder.AddAttribute(index++, "IsVisible", item.IsVisible);
+                menuItemBuilder.AddAttribute(index++, "ChildContent", (RenderFragment)((menuItemContentBuilder) =>
+                {
+                    menuItemContentBuilder.AddContent(index++, item.Title);
+                }));
             }
 
             menuItemBuilder.CloseComponent();

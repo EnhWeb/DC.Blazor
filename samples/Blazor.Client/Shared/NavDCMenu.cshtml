@@ -5,30 +5,29 @@
     <a class="navbar-brand" href="">Blazor</a>
 </div>
 
-@*<DCMenu>
-    <BlazoredMenuItem>
+<DCMenu>
+    <DCMenuItem>
         <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
-    </BlazoredMenuItem>
-    <BlazoredMenuItem>
+    </DCMenuItem>
+    <DCMenuItem>
         <NavLink href="counter">Counter</NavLink>
-    </BlazoredMenuItem>
-    <BlazoredSubMenu Header="Sub Menu">
-        <BlazoredMenuItem>
+    </DCMenuItem>
+    <DCSubMenu Header="Sub Menu">
+        <DCMenuItem>
             <NavLink href="counter">Counter</NavLink>
-        </BlazoredMenuItem>
-        <BlazoredMenuItem>
+        </DCMenuItem>
+        <DCMenuItem>
             <NavLink href="fetchdata">Fetch data</NavLink>
-        </BlazoredMenuItem>
-    </BlazoredSubMenu>
-    <BlazoredMenuItem>
+        </DCMenuItem>
+    </DCSubMenu>
+    <DCMenuItem>
         <NavLink href="fetchdata">Fetch data</NavLink>
-    </BlazoredMenuItem>
-</DCMenu>*@
+    </DCMenuItem>
+</DCMenu>
 
 <DCMenu MenuBuilder="@MenuBuilder" />
 
 <DCMenu ChildContent="@ChildContent" />
-
 
 @functions {
         MenuBuilder MenuBuilder = new MenuBuilder();
