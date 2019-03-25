@@ -30,3 +30,4 @@ dotnet add package DC.Menu
 ###  **用法**
 
 1.使用以下组件构建菜单：
+- DCMenu
