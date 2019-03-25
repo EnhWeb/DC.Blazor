@@ -3,13 +3,13 @@ using System;
 
 namespace DC.Toast
 {
-    public class BlazorToastBase : ComponentBase
+    public class DCToastBase : ComponentBase
     {
         [Parameter] protected Guid ToastId { get; set; }
 
         [Parameter] protected ToastSettings ToastSettings { get; set; }
 
-        [CascadingParameter] private BlazorToasts ToastsContainer { get; set; }
+        [CascadingParameter] private DCToasts ToastsContainer { get; set; }
 
         protected void HideToast()
         {

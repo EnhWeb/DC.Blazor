@@ -20,6 +20,7 @@
     <ProjectReference Include="..\..\src\DC.LoadingBar\DC.LoadingBar.csproj" />
     <ProjectReference Include="..\..\src\DC.Localisation\DC.Localisation.csproj" />
     <ProjectReference Include="..\..\src\DC.Menu\DC.Menu.csproj" />
+    <ProjectReference Include="..\..\src\DC.Modal\DC.Modal.csproj" />
     <ProjectReference Include="..\..\src\DC.Storage\DC.Storage.csproj" />
     <ProjectReference Include="..\..\src\DC.Toast\DC.Toast.csproj" />
     <ProjectReference Include="..\Blazor.Shared\Blazor.Shared.csproj" />

@@ -10,7 +10,7 @@ using System.Timers;
 
 namespace DC.Toast
 {
-    public class BlazorToastsBase : ComponentBase
+    public class DCToastsBase : ComponentBase
     {
         [Inject] private IToastService ToastService { get; set; }
 
@@ -54,7 +54,7 @@ namespace DC.Toast
             var toastId = Guid.NewGuid();
             var toast = new RenderFragment(b =>
             {
-                b.OpenComponent<BlazorToast>(0);
+                b.OpenComponent<DCToast>(0);
                 b.AddAttribute(1, "ToastSettings", settings);
                 b.AddAttribute(2, "ToastId", toastId);
                 b.CloseComponent();

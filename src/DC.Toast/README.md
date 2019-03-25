@@ -41,7 +41,7 @@ public void ConfigureServices (IServiceCollection services)
 3.在MainLayout.cshtml中注册Toast组件
 
 ```
-<BlazorToasts />
+<DCToasts />
 ```
 
 ###  **用法** 

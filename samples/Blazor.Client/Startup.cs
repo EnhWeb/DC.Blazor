@@ -18,6 +18,8 @@ namespace Blazor.Client
             services.AddDCHttpClientInterceptor(); // 注册Http请求拦截器
 
             services.AddDCLoadingBar();  // 注册顶部加载进度组件
+
+            services.AddDCModal();  // 注册模态组件
         }
 
         public void Configure(IComponentsApplicationBuilder app)
