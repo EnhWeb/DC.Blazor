@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{35C9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Menu", "src\DC.Menu\DC.Menu.csproj", "{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Modal", "src\DC.Modal\DC.Modal.csproj", "{355FF94E-2E43-49AC-8782-AFEE5BAD6937}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{355FF94E-2E43-49AC-8782-AFEE5BAD6937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{355FF94E-2E43-49AC-8782-AFEE5BAD6937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{355FF94E-2E43-49AC-8782-AFEE5BAD6937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{355FF94E-2E43-49AC-8782-AFEE5BAD6937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +95,7 @@ Global
 		{AECC7236-2E84-4CEA-8379-1E1DD9C4E9FE} = {AC1D4565-7AF5-470F-AC01-6821B26D8870}
 		{35C933D0-CA57-48C4-8510-695DAB4C9270} = {91AC3A58-8BCF-4A41-A97E-EABBFA8A2B3C}
 		{8B8F478A-A396-4E8B-94B3-96FC520E9D4C} = {AC1D4565-7AF5-470F-AC01-6821B26D8870}
+		{355FF94E-2E43-49AC-8782-AFEE5BAD6937} = {AC1D4565-7AF5-470F-AC01-6821B26D8870}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3A1978C-8396-4E88-93CA-329D2365BFC1}
