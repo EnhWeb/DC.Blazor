@@ -45,5 +45,10 @@ namespace DC.Bue.Base
         /// 获取样式映射器
         /// </summary>
         protected StyleMapper StyleMapper { get; private set; } = new StyleMapper();
+
+        /// <summary>
+        /// 获取或设置自定义组件映射器。
+        /// </summary>
+        [Inject] protected IComponentMapper ComponentMapper { get; set; }
     }
 }

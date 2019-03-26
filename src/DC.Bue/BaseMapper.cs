@@ -46,5 +46,46 @@ namespace DC.Bue
                 disposed = true;
             }
         }
+
+        protected IEnumerable<string> GetValidRules()
+        {
+            foreach (var rule in rules)
+            {
+                if (!rule.Value())  // 跳过错误的条件
+                {
+                    continue;
+                }
+
+                var key = rule.Key();
+
+                if (key != null)
+                {
+                    yield return key;
+                }
+            }
+        }
+
+        protected IEnumerable<string> GetValidListRules()
+        {
+            foreach (var listRule in listRules)
+            {
+                if (!listRule.Value())
+                {
+                    continue;
+                }
+
+                var key = listRule.Key();
+
+                if(key == null)
+                {
+                    continue;
+                }
+
+                foreach (var value in key)
+                {
+                    yield return value;
+                }
+            }
+        }
     }
 }

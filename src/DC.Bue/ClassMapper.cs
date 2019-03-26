@@ -1,4 +1,6 @@
-﻿namespace DC.Bue
+﻿using System.Linq;
+
+namespace DC.Bue
 {
     public class ClassMapper : BaseMapper
     {

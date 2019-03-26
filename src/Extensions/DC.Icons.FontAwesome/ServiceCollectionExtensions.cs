@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Builder;
+﻿using DC.Bue;
+using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DC.Icons.FontAwesome
@@ -10,7 +11,7 @@ namespace DC.Icons.FontAwesome
     {
         public static IServiceCollection AddDCFontAwesomeIcons(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddSingleton<IConProvider, FontAwesomeIconProvider>();
+            serviceCollection.AddSingleton<IconProvider, FontAwesomeIconProvider>();
 
             return serviceCollection;
         }
