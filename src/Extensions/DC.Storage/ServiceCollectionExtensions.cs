@@ -16,7 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 注册前端本地存储服务
         /// </summary>
         /// <param name="services">服务集合</param>
-        public static void AddDCStorage(this IServiceCollection services)
+        public static IServiceCollection AddDCStorage(this IServiceCollection services)
         {
             if (services.FirstOrDefault(d => d.ServiceType == typeof(ILocalStorageService)) == null)
             {
@@ -28,6 +28,8 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddScoped<ISessionStorageService, SessionStorageService>()
                 .AddScoped<ISyncSessionStorageService, SessionStorageService>();
             }
+
+            return services;
         }
     }
 }

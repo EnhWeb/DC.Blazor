@@ -13,7 +13,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 注册网页加载顶部进度条服务
         /// </summary>
         /// <param name="services">服务集合</param>
-        public static void AddDCLoadingBar(this IServiceCollection services)
+        public static IServiceCollection AddDCLoadingBar(this IServiceCollection services)
         {
             services.AddDCHttpClientInterceptor();
 
@@ -21,6 +21,8 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 services.AddSingleton<LoadingBarService>();
             }
+
+            return services;
         }
 
         private static bool Installed;

@@ -15,13 +15,15 @@ namespace Microsoft.AspNetCore.Components.Builder
         /// 注册前端本地化服务
         /// </summary>
         /// <param name="services">服务集合</param>
-        public static void AddDCLocalisation(this IServiceCollection services)
+        public static IServiceCollection AddDCLocalisation(this IServiceCollection services)
         {
             if (services.FirstOrDefault(d => d.ServiceType == typeof(ILocalisationService)) == null)
             {
                 services
                 .AddScoped<ILocalisationService, LocalisationService>();
             }
+
+            return services;
         }
 
         /// <summary>

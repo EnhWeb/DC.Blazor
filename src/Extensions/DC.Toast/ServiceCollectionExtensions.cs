@@ -16,12 +16,14 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 注册提示框服务
         /// </summary>
         /// <param name="services">服务集合</param>
-        public static void AddDCToast(this IServiceCollection services)
+        public static IServiceCollection AddDCToast(this IServiceCollection services)
         {
             if (services.FirstOrDefault(d => d.ServiceType == typeof(IToastService)) == null)
             {
                 services.AddScoped<IToastService, ToastService>();
             }
+
+            return services;
         }
     }
 }
