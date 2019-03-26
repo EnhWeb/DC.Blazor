@@ -1,4 +1,4 @@
-本前端框架是基于Blazor开发，适用于net后端开发人员。
+本前端框架是基于Blazor开发，适用于net后端开发人员。诚邀有心人一起开发开源，做大这个框架
 
 交流QQ：2505111990  QQ群：774046050
 
@@ -19,3 +19,4 @@
  **DC.Menu** : Blazor自定义菜单组件
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143458_244fc8de_130171.png "演示图片")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0326/184321_d2a8a44d_130171.png "演示图片")
