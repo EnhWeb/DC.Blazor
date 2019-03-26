@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-  <Import Project="../../build/version.props" />
+  <Import Project="../../../build/version.props" />
 
   <PropertyGroup>
     <!-- Disable warning for Controller/Action/Method not have block comment -->
@@ -17,7 +17,7 @@
     <Company>深圳云企微商网络科技有限公司</Company>
     <Copyright>©2002-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
-    <OutputPath>..\..\output\release\</OutputPath>
+    <OutputPath>..\..\..\output\release\</OutputPath>
     <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
 
