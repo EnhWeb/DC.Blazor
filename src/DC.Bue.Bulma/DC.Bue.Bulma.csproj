@@ -24,4 +24,8 @@
     <Folder Include="content\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DC.Bue\DC.Bue.csproj" />
+  </ItemGroup>
+
 </Project>
