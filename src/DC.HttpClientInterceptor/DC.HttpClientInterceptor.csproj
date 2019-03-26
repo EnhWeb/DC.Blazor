@@ -35,7 +35,7 @@
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Blazor</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>DingChuan;DC;Berin;$(AssemblyName);DotNetCore;AspNetCore;Core;Blazor;Razor Components;LoadingBar;</PackageTags>
+    <PackageTags>DingChuan;DC;Berin;$(AssemblyName);DotNetCore;AspNetCore;Core;Blazor;Razor Components;Http;HttpClientInterceptor;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
