@@ -16,13 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DC.HttpClientInterceptor\DC.HttpClientInterceptor.csproj" />
-    <ProjectReference Include="..\..\src\DC.LoadingBar\DC.LoadingBar.csproj" />
-    <ProjectReference Include="..\..\src\DC.Localisation\DC.Localisation.csproj" />
-    <ProjectReference Include="..\..\src\DC.Menu\DC.Menu.csproj" />
-    <ProjectReference Include="..\..\src\DC.Modal\DC.Modal.csproj" />
-    <ProjectReference Include="..\..\src\DC.Storage\DC.Storage.csproj" />
-    <ProjectReference Include="..\..\src\DC.Toast\DC.Toast.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.HttpClientInterceptor\DC.HttpClientInterceptor.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.LoadingBar\DC.LoadingBar.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.Localisation\DC.Localisation.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.Menu\DC.Menu.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.Modal\DC.Modal.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.Storage\DC.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.Toast\DC.Toast.csproj" />
     <ProjectReference Include="..\Blazor.Shared\Blazor.Shared.csproj" />
   </ItemGroup>
 
