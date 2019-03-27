@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 #endregion
 
-namespace Blazorise.Bulma.BulmaBase
+namespace DC.Bue.Bulma.BulmaBase
 {
-    public abstract class BaseBulmaFieldLabel : Blazorise.Base.BaseFieldLabel
+    public abstract class BaseBulmaFieldLabel : DC.Bue.Base.BaseFieldLabel
     {
         #region Members
 

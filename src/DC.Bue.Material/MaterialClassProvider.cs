@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Material
+namespace DC.Bue.Material
 {
-    public class MaterialClassProvider : Bootstrap.BootstrapClassProvider
+    public class MaterialClassProvider : BootStrap.BootStrapClassProvider
     {
         public override string TabPanel() => "tab-pane fade";
 

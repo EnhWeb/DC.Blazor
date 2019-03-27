@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 #endregion
 
-namespace Blazorise.Bulma
+namespace DC.Bue.Bulma
 {
     public static class Config
     {
@@ -29,30 +29,30 @@ namespace Blazorise.Bulma
         {
             var componentMapper = app.Services.GetRequiredService<IComponentMapper>();
 
-            componentMapper.Register<Blazorise.Addons, Bulma.Addons>();
-            componentMapper.Register<Blazorise.BarToggler, Bulma.BarToggler>();
-            componentMapper.Register<Blazorise.BarDropdown, Bulma.BarDropdown>();
-            componentMapper.Register<Blazorise.Breadcrumb, Bulma.Breadcrumb>();
-            componentMapper.Register<Blazorise.BreadcrumbLink, Bulma.BreadcrumbLink>();
-            componentMapper.Register<Blazorise.CardImage, Bulma.CardImage>();
-            componentMapper.Register<Blazorise.CardSubtitle, Bulma.CardSubtitle>();
-            componentMapper.Register<Blazorise.CheckEdit, Bulma.CheckEdit>();
-            componentMapper.Register<Blazorise.DateEdit, Bulma.DateEdit>();
-            componentMapper.Register<Blazorise.DropdownDivider, Bulma.DropdownDivider>();
-            componentMapper.Register<Blazorise.DropdownMenu, Bulma.DropdownMenu>();
-            componentMapper.Register<Blazorise.DropdownToggle, Bulma.DropdownToggle>();
-            componentMapper.Register<Blazorise.Field, Bulma.Field>();
-            componentMapper.Register<Blazorise.FieldLabel, Bulma.FieldLabel>();
-            componentMapper.Register<Blazorise.FieldHelp, Bulma.FieldHelp>();
-            componentMapper.Register<Blazorise.FieldBody, Bulma.FieldBody>();
-            componentMapper.Register<Blazorise.Fields, Bulma.Fields>();
-            componentMapper.Register<Blazorise.FileEdit, Bulma.FileEdit>();
-            componentMapper.Register<Blazorise.MemoEdit, Bulma.MemoEdit>();
-            componentMapper.Register( typeof( Blazorise.SelectEdit<> ), typeof( Bulma.SelectEdit<> ) );
-            componentMapper.Register<Blazorise.SimpleButton, Bulma.SimpleButton>();
-            componentMapper.Register<Blazorise.Tabs, Bulma.Tabs>();
-            componentMapper.Register<Blazorise.TextEdit, Bulma.TextEdit>();
-            componentMapper.Register( typeof( Blazorise.NumericEdit<> ), typeof( Bulma.NumericEdit<> ) );
+            componentMapper.Register<DC.Bue.Addons, Bulma.Addons>();
+            componentMapper.Register<DC.Bue.BarToggler, Bulma.BarToggler>();
+            componentMapper.Register<DC.Bue.BarDropdown, Bulma.BarDropdown>();
+            componentMapper.Register<DC.Bue.Breadcrumb, Bulma.Breadcrumb>();
+            componentMapper.Register<DC.Bue.BreadcrumbLink, Bulma.BreadcrumbLink>();
+            componentMapper.Register<DC.Bue.CardImage, Bulma.CardImage>();
+            componentMapper.Register<DC.Bue.CardSubtitle, Bulma.CardSubtitle>();
+            componentMapper.Register<DC.Bue.CheckEdit, Bulma.CheckEdit>();
+            componentMapper.Register<DC.Bue.DateEdit, Bulma.DateEdit>();
+            componentMapper.Register<DC.Bue.DropdownDivider, Bulma.DropdownDivider>();
+            componentMapper.Register<DC.Bue.DropdownMenu, Bulma.DropdownMenu>();
+            componentMapper.Register<DC.Bue.DropdownToggle, Bulma.DropdownToggle>();
+            componentMapper.Register<DC.Bue.Field, Bulma.Field>();
+            componentMapper.Register<DC.Bue.FieldLabel, Bulma.FieldLabel>();
+            componentMapper.Register<DC.Bue.FieldHelp, Bulma.FieldHelp>();
+            componentMapper.Register<DC.Bue.FieldBody, Bulma.FieldBody>();
+            componentMapper.Register<DC.Bue.Fields, Bulma.Fields>();
+            componentMapper.Register<DC.Bue.FileEdit, Bulma.FileEdit>();
+            componentMapper.Register<DC.Bue.MemoEdit, Bulma.MemoEdit>();
+            componentMapper.Register( typeof( DC.Bue.SelectEdit<> ), typeof( Bulma.SelectEdit<> ) );
+            componentMapper.Register<DC.Bue.SimpleButton, Bulma.SimpleButton>();
+            componentMapper.Register<DC.Bue.Tabs, Bulma.Tabs>();
+            componentMapper.Register<DC.Bue.TextEdit, Bulma.TextEdit>();
+            componentMapper.Register( typeof( DC.Bue.NumericEdit<> ), typeof( Bulma.NumericEdit<> ) );
 
             return app;
         }

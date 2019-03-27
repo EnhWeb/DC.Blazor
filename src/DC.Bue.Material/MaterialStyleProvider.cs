@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Material
+namespace DC.Bue.Material
 {
-    public class MaterialStyleProvider : Bootstrap.BootstrapStyleProvider
+    public class MaterialStyleProvider : BootStrap.BootStrapStyleProvider
     {
     }
 }

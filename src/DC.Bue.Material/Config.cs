@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazorise.Bootstrap;
+using DC.Bue.BootStrap;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 #endregion
 
-namespace Blazorise.Material
+namespace DC.Bue.Material
 {
     public static class Config
     {
@@ -34,7 +34,7 @@ namespace Blazorise.Material
         public static IComponentsApplicationBuilder UseMaterialProviders( this IComponentsApplicationBuilder app )
         {
             // same components as in bootstrap provider
-            app.UseBootstrapProviders();
+            app.UseBootStrapProviders();
 
             return app;
         }

@@ -1,8 +1,8 @@
-if (!window.blazoriseBulma) {
-    window.blazoriseBulma = {};
+if (!window.DC.BueBulma) {
+    window.DC.BueBulma = {};
 }
 
-window.blazoriseBulma = {
+window.DC.BueBulma = {
     activateDatePicker: (elementId) => {
         return true;
     }

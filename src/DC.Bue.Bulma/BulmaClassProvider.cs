@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bulma
+namespace DC.Bue.Bulma
 {
     class BulmaClassProvider : IClassProvider
     {
@@ -462,9 +462,9 @@ namespace Blazorise.Bulma
         {
             var baseClass = offset ? "offset-" : null;
 
-            if ( breakpoint != Blazorise.Breakpoint.None )
+            if ( breakpoint != DC.Bue.Breakpoint.None )
             {
-                if ( columnWidth == Blazorise.ColumnWidth.None )
+                if ( columnWidth == DC.Bue.ColumnWidth.None )
                     return $"{Col()} is-{baseClass}{Breakpoint( breakpoint )}";
 
                 return $"{Col()} is-{baseClass}{Breakpoint( breakpoint )}-{ColumnWidth( columnWidth )}";
@@ -477,15 +477,15 @@ namespace Blazorise.Bulma
         {
             var offsetClass = offset ? "offset-" : null;
 
-            if ( breakpoint != Blazorise.Breakpoint.None )
+            if ( breakpoint != DC.Bue.Breakpoint.None )
             {
-                if ( columnWidth == Blazorise.ColumnWidth.Auto )
+                if ( columnWidth == DC.Bue.ColumnWidth.Auto )
                     return $"{Col()} is-{Breakpoint( breakpoint )}";
 
                 return $"{Col()} is-{Breakpoint( breakpoint )} is-{offsetClass}{ColumnWidth( columnWidth )}";
             }
 
-            if ( columnWidth == Blazorise.ColumnWidth.Auto )
+            if ( columnWidth == DC.Bue.ColumnWidth.Auto )
                 return $"{Col()}";
 
             return $"{Col()} is-{offsetClass}{ColumnWidth( columnWidth )}";
@@ -619,19 +619,19 @@ namespace Blazorise.Bulma
         {
             switch ( color )
             {
-                case Blazorise.Color.Primary:
+                case DC.Bue.Color.Primary:
                     return "is-primary";
-                case Blazorise.Color.Secondary:
+                case DC.Bue.Color.Secondary:
                     return "is-info";
-                case Blazorise.Color.Success:
+                case DC.Bue.Color.Success:
                     return "is-success";
-                case Blazorise.Color.Danger:
+                case DC.Bue.Color.Danger:
                     return "is-danger";
-                case Blazorise.Color.Warning:
+                case DC.Bue.Color.Warning:
                     return "is-warning";
-                case Blazorise.Color.Info:
+                case DC.Bue.Color.Info:
                     return "is-info";
-                case Blazorise.Color.Link:
+                case DC.Bue.Color.Link:
                     return "is-link";
                 default:
                     return null;
@@ -719,7 +719,7 @@ namespace Blazorise.Bulma
         // TODO: Bulma by default doesn't have spacing utilities. Try to fix this!
         public virtual string Spacing( Spacing spacing, SpacingSize spacingSize, Side side, Breakpoint breakpoint )
         {
-            if ( breakpoint != Blazorise.Breakpoint.None )
+            if ( breakpoint != DC.Bue.Breakpoint.None )
                 return $"is-{Spacing( spacing )}{Side( side )}-{Breakpoint( breakpoint )}-{SpacingSize( spacingSize )}";
 
             return $"is-{Spacing( spacing )}{Side( side )}-{SpacingSize( spacingSize )}";
@@ -741,13 +741,13 @@ namespace Blazorise.Bulma
         {
             switch ( size )
             {
-                case Blazorise.Size.ExtraSmall:
-                case Blazorise.Size.Small:
+                case DC.Bue.Size.ExtraSmall:
+                case DC.Bue.Size.Small:
                     return "is-small";
-                case Blazorise.Size.Medium:
+                case DC.Bue.Size.Medium:
                     return "is-medium";
-                case Blazorise.Size.Large:
-                case Blazorise.Size.ExtraLarge:
+                case DC.Bue.Size.Large:
+                case DC.Bue.Size.ExtraLarge:
                     return "is-large";
                 default:
                     return null;
@@ -758,15 +758,15 @@ namespace Blazorise.Bulma
         {
             switch ( breakpoint )
             {
-                case Blazorise.Breakpoint.Mobile:
+                case DC.Bue.Breakpoint.Mobile:
                     return "mobile";
-                case Blazorise.Breakpoint.Tablet:
+                case DC.Bue.Breakpoint.Tablet:
                     return "tablet";
-                case Blazorise.Breakpoint.Desktop:
+                case DC.Bue.Breakpoint.Desktop:
                     return "desktop";
-                case Blazorise.Breakpoint.Widescreen:
+                case DC.Bue.Breakpoint.Widescreen:
                     return "widescreen";
-                case Blazorise.Breakpoint.FullHD:
+                case DC.Bue.Breakpoint.FullHD:
                     return "fullhd";
                 default:
                     return null;
@@ -777,19 +777,19 @@ namespace Blazorise.Bulma
         {
             switch ( color )
             {
-                case Blazorise.Color.Primary:
+                case DC.Bue.Color.Primary:
                     return "primary";
-                case Blazorise.Color.Secondary:
+                case DC.Bue.Color.Secondary:
                     return "info";
-                case Blazorise.Color.Success:
+                case DC.Bue.Color.Success:
                     return "success";
-                case Blazorise.Color.Danger:
+                case DC.Bue.Color.Danger:
                     return "danger";
-                case Blazorise.Color.Warning:
+                case DC.Bue.Color.Warning:
                     return "warning";
-                case Blazorise.Color.Info:
+                case DC.Bue.Color.Info:
                     return "info";
-                case Blazorise.Color.Link:
+                case DC.Bue.Color.Link:
                     return "link";
                 default:
                     return null;
@@ -800,25 +800,25 @@ namespace Blazorise.Bulma
         {
             switch ( color )
             {
-                case Blazorise.Background.Primary:
+                case DC.Bue.Background.Primary:
                     return "has-background-primary";
-                case Blazorise.Background.Secondary:
+                case DC.Bue.Background.Secondary:
                     return "has-background-light";
-                case Blazorise.Background.Success:
+                case DC.Bue.Background.Success:
                     return "has-background-success";
-                case Blazorise.Background.Danger:
+                case DC.Bue.Background.Danger:
                     return "has-background-danger";
-                case Blazorise.Background.Warning:
+                case DC.Bue.Background.Warning:
                     return "has-background-warning";
-                case Blazorise.Background.Info:
+                case DC.Bue.Background.Info:
                     return "has-background-info";
-                case Blazorise.Background.Light:
+                case DC.Bue.Background.Light:
                     return "has-background-light";
-                case Blazorise.Background.Dark:
+                case DC.Bue.Background.Dark:
                     return "has-background-dark";
-                case Blazorise.Background.White:
+                case DC.Bue.Background.White:
                     return "has-background-white";
-                case Blazorise.Background.Transparent:
+                case DC.Bue.Background.Transparent:
                     return "transparent";
                 default:
                     return null;
@@ -829,31 +829,31 @@ namespace Blazorise.Bulma
         {
             switch ( textColor )
             {
-                case Blazorise.TextColor.Primary:
+                case DC.Bue.TextColor.Primary:
                     return "primary";
-                //case Blazorise.TextColor.Secondary:
+                //case DC.Bue.TextColor.Secondary:
                 //    return "secondary";
-                case Blazorise.TextColor.Success:
+                case DC.Bue.TextColor.Success:
                     return "success";
-                case Blazorise.TextColor.Danger:
+                case DC.Bue.TextColor.Danger:
                     return "danger";
-                case Blazorise.TextColor.Warning:
+                case DC.Bue.TextColor.Warning:
                     return "warning";
-                case Blazorise.TextColor.Info:
+                case DC.Bue.TextColor.Info:
                     return "info";
-                case Blazorise.TextColor.Light:
+                case DC.Bue.TextColor.Light:
                     return "light";
-                case Blazorise.TextColor.Dark:
+                case DC.Bue.TextColor.Dark:
                     return "dark";
-                //case Blazorise.TextColor.Body:
+                //case DC.Bue.TextColor.Body:
                 //    return "body";
-                //case Blazorise.TextColor.Muted:
+                //case DC.Bue.TextColor.Muted:
                 //    return "muted";
-                case Blazorise.TextColor.White:
+                case DC.Bue.TextColor.White:
                     return "white";
-                //case Blazorise.TextColor.Black50:
+                //case DC.Bue.TextColor.Black50:
                 //    return "black-50";
-                //case Blazorise.TextColor.White50:
+                //case DC.Bue.TextColor.White50:
                 //    return "white-50";
                 default:
                     return null;
@@ -864,9 +864,9 @@ namespace Blazorise.Bulma
         {
             switch ( theme )
             {
-                case Blazorise.Theme.Light:
+                case DC.Bue.Theme.Light:
                     return "light";
-                case Blazorise.Theme.Dark:
+                case DC.Bue.Theme.Dark:
                     return "dark";
                 default:
                     return null;
@@ -877,9 +877,9 @@ namespace Blazorise.Bulma
         {
             switch ( @float )
             {
-                case Blazorise.Float.Left:
+                case DC.Bue.Float.Left:
                     return "is-pulled-left";
-                case Blazorise.Float.Right:
+                case DC.Bue.Float.Right:
                     return "is-pulled-right	";
                 default:
                     return null;
@@ -890,9 +890,9 @@ namespace Blazorise.Bulma
         {
             switch ( spacing )
             {
-                case Blazorise.Spacing.Margin:
+                case DC.Bue.Spacing.Margin:
                     return "m";
-                case Blazorise.Spacing.Padding:
+                case DC.Bue.Spacing.Padding:
                     return "p";
                 default:
                     return null;
@@ -903,17 +903,17 @@ namespace Blazorise.Bulma
         {
             switch ( side )
             {
-                case Blazorise.Side.Top:
+                case DC.Bue.Side.Top:
                     return "t";
-                case Blazorise.Side.Bottom:
+                case DC.Bue.Side.Bottom:
                     return "b";
-                case Blazorise.Side.Left:
+                case DC.Bue.Side.Left:
                     return "l";
-                case Blazorise.Side.Right:
+                case DC.Bue.Side.Right:
                     return "r";
-                case Blazorise.Side.X:
+                case DC.Bue.Side.X:
                     return "x";
-                case Blazorise.Side.Y:
+                case DC.Bue.Side.Y:
                     return "y";
                 default:
                     return null;
@@ -924,11 +924,11 @@ namespace Blazorise.Bulma
         {
             switch ( alignment )
             {
-                case Blazorise.Alignment.Start:
+                case DC.Bue.Alignment.Start:
                     return "start";
-                case Blazorise.Alignment.Center:
+                case DC.Bue.Alignment.Center:
                     return "center";
-                case Blazorise.Alignment.End:
+                case DC.Bue.Alignment.End:
                     return "end";
                 default:
                     return null;
@@ -939,13 +939,13 @@ namespace Blazorise.Bulma
         {
             switch ( textAlignment )
             {
-                case Blazorise.TextAlignment.Left:
+                case DC.Bue.TextAlignment.Left:
                     return "left";
-                case Blazorise.TextAlignment.Center:
+                case DC.Bue.TextAlignment.Center:
                     return "centered";
-                case Blazorise.TextAlignment.Right:
+                case DC.Bue.TextAlignment.Right:
                     return "right";
-                case Blazorise.TextAlignment.Justified:
+                case DC.Bue.TextAlignment.Justified:
                     return "justified";
                 default:
                     return null;
@@ -956,11 +956,11 @@ namespace Blazorise.Bulma
         {
             switch ( textTransform )
             {
-                case Blazorise.TextTransform.Lowercase:
+                case DC.Bue.TextTransform.Lowercase:
                     return "lowercase";
-                case Blazorise.TextTransform.Uppercase:
+                case DC.Bue.TextTransform.Uppercase:
                     return "uppercase";
-                case Blazorise.TextTransform.Capitalize:
+                case DC.Bue.TextTransform.Capitalize:
                     return "capitalized";
                 default:
                     return null;
@@ -971,11 +971,11 @@ namespace Blazorise.Bulma
         {
             switch ( textWeight )
             {
-                case Blazorise.TextWeight.Normal:
+                case DC.Bue.TextWeight.Normal:
                     return "normal";
-                case Blazorise.TextWeight.Bold:
+                case DC.Bue.TextWeight.Bold:
                     return "bold";
-                case Blazorise.TextWeight.Light:
+                case DC.Bue.TextWeight.Light:
                     return "light";
                 default:
                     return null;
@@ -986,33 +986,33 @@ namespace Blazorise.Bulma
         {
             switch ( columnWidth )
             {
-                case Blazorise.ColumnWidth.Is1:
+                case DC.Bue.ColumnWidth.Is1:
                     return "1";
-                case Blazorise.ColumnWidth.Is2:
+                case DC.Bue.ColumnWidth.Is2:
                     return "2";
-                case Blazorise.ColumnWidth.Is3:
-                case Blazorise.ColumnWidth.Quarter:
+                case DC.Bue.ColumnWidth.Is3:
+                case DC.Bue.ColumnWidth.Quarter:
                     return "3";
-                case Blazorise.ColumnWidth.Is4:
-                case Blazorise.ColumnWidth.Third:
+                case DC.Bue.ColumnWidth.Is4:
+                case DC.Bue.ColumnWidth.Third:
                     return "4";
-                case Blazorise.ColumnWidth.Is5:
+                case DC.Bue.ColumnWidth.Is5:
                     return "5";
-                case Blazorise.ColumnWidth.Is6:
-                case Blazorise.ColumnWidth.Half:
+                case DC.Bue.ColumnWidth.Is6:
+                case DC.Bue.ColumnWidth.Half:
                     return "6";
-                case Blazorise.ColumnWidth.Is7:
+                case DC.Bue.ColumnWidth.Is7:
                     return "7";
-                case Blazorise.ColumnWidth.Is8:
+                case DC.Bue.ColumnWidth.Is8:
                     return "8";
-                case Blazorise.ColumnWidth.Is9:
+                case DC.Bue.ColumnWidth.Is9:
                     return "9";
-                case Blazorise.ColumnWidth.Is10:
+                case DC.Bue.ColumnWidth.Is10:
                     return "10";
-                case Blazorise.ColumnWidth.Is11:
+                case DC.Bue.ColumnWidth.Is11:
                     return "11";
-                case Blazorise.ColumnWidth.Is12:
-                case Blazorise.ColumnWidth.Full:
+                case DC.Bue.ColumnWidth.Is12:
+                case DC.Bue.ColumnWidth.Full:
                     return "12";
                 default:
                     return null;
@@ -1023,13 +1023,13 @@ namespace Blazorise.Bulma
         {
             switch ( modalSize )
             {
-                case Blazorise.ModalSize.Small:
+                case DC.Bue.ModalSize.Small:
                     return "modal-sm";
-                case Blazorise.ModalSize.Large:
+                case DC.Bue.ModalSize.Large:
                     return "modal-lg";
-                case Blazorise.ModalSize.ExtraLarge:
+                case DC.Bue.ModalSize.ExtraLarge:
                     return "modal-xl";
-                case Blazorise.ModalSize.Default:
+                case DC.Bue.ModalSize.Default:
                 default:
                     return null;
             }
@@ -1039,19 +1039,19 @@ namespace Blazorise.Bulma
         {
             switch ( spacingSize )
             {
-                case Blazorise.SpacingSize.Is0:
+                case DC.Bue.SpacingSize.Is0:
                     return "0";
-                case Blazorise.SpacingSize.Is1:
+                case DC.Bue.SpacingSize.Is1:
                     return "1";
-                case Blazorise.SpacingSize.Is2:
+                case DC.Bue.SpacingSize.Is2:
                     return "2";
-                case Blazorise.SpacingSize.Is3:
+                case DC.Bue.SpacingSize.Is3:
                     return "3";
-                case Blazorise.SpacingSize.Is4:
+                case DC.Bue.SpacingSize.Is4:
                     return "4";
-                case Blazorise.SpacingSize.Is5:
+                case DC.Bue.SpacingSize.Is5:
                     return "5";
-                case Blazorise.SpacingSize.IsAuto:
+                case DC.Bue.SpacingSize.IsAuto:
                     return "auto";
                 default:
                     return null;
@@ -1062,15 +1062,15 @@ namespace Blazorise.Bulma
         {
             switch ( justifyContent )
             {
-                case Blazorise.JustifyContent.Start:
+                case DC.Bue.JustifyContent.Start:
                     return "justify-content-start";
-                case Blazorise.JustifyContent.End:
+                case DC.Bue.JustifyContent.End:
                     return "justify-content-end";
-                case Blazorise.JustifyContent.Center:
+                case DC.Bue.JustifyContent.Center:
                     return "justify-content-center";
-                case Blazorise.JustifyContent.Between:
+                case DC.Bue.JustifyContent.Between:
                     return "justify-content-between";
-                case Blazorise.JustifyContent.Around:
+                case DC.Bue.JustifyContent.Around:
                     return "justify-content-around";
                 default:
                     return null;
@@ -1081,9 +1081,9 @@ namespace Blazorise.Bulma
         {
             switch ( screenreader )
             {
-                case Blazorise.Screenreader.Only:
+                case DC.Bue.Screenreader.Only:
                     return "is-sr-only";
-                case Blazorise.Screenreader.OnlyFocusable:
+                case DC.Bue.Screenreader.OnlyFocusable:
                     return "is-sr-only-focusable";
                 default:
                     return null;
@@ -1094,17 +1094,17 @@ namespace Blazorise.Bulma
         {
             switch ( headingSize )
             {
-                case Blazorise.HeadingSize.Is1:
+                case DC.Bue.HeadingSize.Is1:
                     return "1";
-                case Blazorise.HeadingSize.Is2:
+                case DC.Bue.HeadingSize.Is2:
                     return "2";
-                case Blazorise.HeadingSize.Is3:
+                case DC.Bue.HeadingSize.Is3:
                     return "3";
-                case Blazorise.HeadingSize.Is4:
+                case DC.Bue.HeadingSize.Is4:
                     return "4";
-                case Blazorise.HeadingSize.Is5:
+                case DC.Bue.HeadingSize.Is5:
                     return "5";
-                case Blazorise.HeadingSize.Is6:
+                case DC.Bue.HeadingSize.Is6:
                     return "6";
                 default:
                     return null;
@@ -1115,9 +1115,9 @@ namespace Blazorise.Bulma
         {
             switch ( validationStatus )
             {
-                case Blazorise.ValidationStatus.Success:
+                case DC.Bue.ValidationStatus.Success:
                     return "is-success";
-                case Blazorise.ValidationStatus.Error:
+                case DC.Bue.ValidationStatus.Error:
                     return "is-danger";
                 default:
                     return null;

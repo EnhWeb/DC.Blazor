@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bulma
+namespace DC.Bue.Bulma
 {
     class BulmaStyleProvider : IStyleProvider
     {
@@ -29,7 +29,7 @@ namespace Blazorise.Bulma
 
         #region Layout
 
-        public string Visibility( Visibility visibility ) => visibility == Blazorise.Visibility.Never ? "display: none;" : null;
+        public string Visibility( Visibility visibility ) => visibility == DC.Bue.Visibility.Never ? "display: none;" : null;
 
         #endregion
     }

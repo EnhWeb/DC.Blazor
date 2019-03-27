@@ -3,9 +3,9 @@ using Microsoft.JSInterop;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Material
+namespace DC.Bue.Material
 {
-    public partial class MaterialJSRunner : Blazorise.JSRunner
+    public partial class MaterialJSRunner : DC.Bue.JSRunner
     {
         public MaterialJSRunner( IJSRuntime runtime )
                : base( runtime )
@@ -14,7 +14,7 @@ namespace Blazorise.Material
 
         public override Task<bool> ActivateDatePicker( string elementId, string formatSubmit )
         {
-            return runtime.InvokeAsync<bool>( $"blazoriseMaterial.activateDatePicker", elementId, formatSubmit );
+            return runtime.InvokeAsync<bool>( $"DC.BueMaterial.activateDatePicker", elementId, formatSubmit );
         }
     }
 }

@@ -4,9 +4,9 @@ using System;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bulma
+namespace DC.Bue.Bulma
 {
-    public partial class BulmaJSRunner : Blazorise.JSRunner
+    public partial class BulmaJSRunner : DC.Bue.JSRunner
     {
         public BulmaJSRunner( IJSRuntime runtime )
             : base( runtime )

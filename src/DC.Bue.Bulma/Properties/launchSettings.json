@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Blazorise.Bulma": {
+    "DC.Bue.Bulma": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

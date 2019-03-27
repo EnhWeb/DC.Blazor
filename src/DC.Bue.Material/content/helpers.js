@@ -1,8 +1,8 @@
-if (!window.blazoriseMaterial) {
-    window.blazoriseMaterial = {};
+if (!window.DC.BueMaterial) {
+    window.DC.BueMaterial = {};
 }
 
-window.blazoriseMaterial = {
+window.DC.BueMaterial = {
     activateDatePicker: (elementId, formatSubmit) => {
         const element = $(`#${elementId}`);
 
