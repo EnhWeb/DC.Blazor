@@ -6,11 +6,31 @@ namespace DC.Bue
 {
     public class ComponentMapper : IComponentMapper
     {
-        private readonly Dictionary<Type, Type> components;
+        private readonly Dictionary<Type, Type> components = new Dictionary<Type, Type>();
 
-        public ComponentMapper()
+        public Type GetImplementation<TComponent>()
+            where TComponent : IComponent
         {
-            components = new Dictionary<Type, Type>();
+            return GetImplementation(typeof(TComponent));
+        }
+
+        public Type GetImplementation(IComponent component)
+        {
+            return GetImplementation(component.GetType());
+        }
+
+        public Type GetImplementation(Type componentType)
+        {
+            components.TryGetValue(componentType, out var implementationType);
+
+            return implementationType;
+        }
+
+        public void Register<TComponent, TImplementation>()
+            where TComponent : IComponent
+            where TImplementation : IComponent
+        {
+            Register(typeof(TComponent), typeof(TImplementation));
         }
 
         public void Register(Type component, Type implementation)

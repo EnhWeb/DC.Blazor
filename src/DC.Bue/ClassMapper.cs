@@ -12,7 +12,7 @@ namespace DC.Bue
             {
                 if (dirty)
                 {
-                    //组合Class，但只组合具有值的Class
+                    //组合样式类，但只组合具有值的样式类
                     if (rules != null && listRules != null)
                     {
                         buildClass = string.Join(" ", GetValidRules().Concat(GetValidListRules()));

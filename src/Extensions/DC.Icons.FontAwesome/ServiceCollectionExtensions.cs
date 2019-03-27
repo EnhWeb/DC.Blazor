@@ -9,6 +9,11 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// 注册Awesome字体图标服务
+        /// </summary>
+        /// <param name="serviceCollection">服务集合</param>
+        /// <returns></returns>
         public static IServiceCollection AddDCFontAwesomeIcons(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddSingleton<IIconProvider, FontAwesomeIconProvider>();
@@ -16,6 +21,11 @@ namespace Microsoft.Extensions.DependencyInjection
             return serviceCollection;
         }
 
+        /// <summary>
+        /// 将Awesome字体图标服务安装到运行时宿主环境。
+        /// </summary>
+        /// <param name="app">运行时宿主环境</param>
+        /// <returns></returns>
         public static IComponentsApplicationBuilder UseDCFontAwesomeIcons(this IComponentsApplicationBuilder app)
         {
             var componentMapper = app.Services.GetRequiredService<IComponentMapper>();

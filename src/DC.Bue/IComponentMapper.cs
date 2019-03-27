@@ -9,6 +9,13 @@ namespace DC.Bue
     public interface IComponentMapper
     {
         /// <summary>
+        /// 获取实现组件类型。
+        /// </summary>
+        /// <param name="component">基础组件。</param>
+        /// <returns></returns>
+        Type GetImplementation(IComponent component);
+
+        /// <summary>
         /// 将实现组件注册到基本组件。
         /// </summary>
         /// <typeparam name="TComponent">基本组件类型。</typeparam>

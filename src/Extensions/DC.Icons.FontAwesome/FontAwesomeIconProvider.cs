@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace DC.Icons.FontAwesome
 {
-    class FontAwesomeIconProvider : BaseIconProvider
+    internal class FontAwesomeIconProvider : BaseIconProvider
     {
         /// <summary>
-        /// 预设图标名称对应的名称
+        /// 预设图标名称对应的名称字典
         /// </summary>
         private static Dictionary<IconName, string> names = new Dictionary<IconName, string>
         {
@@ -64,6 +64,9 @@ namespace DC.Icons.FontAwesome
             names[name] = newName;
         }
 
+        /// <summary>
+        /// 指示是否将类名定义为标记内容。
+        /// </summary>
         public override bool IconNameAsContent => false;
     }
 }
