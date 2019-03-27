@@ -9,6 +9,15 @@ namespace DC.Bue
     public interface IComponentMapper
     {
         /// <summary>
+        /// 将实现组件注册到基本组件。
+        /// </summary>
+        /// <typeparam name="TComponent">基本组件类型。</typeparam>
+        /// <typeparam name="TImplementation">实现组件类型。</typeparam>
+        void Register<TComponent, TImplementation>()
+            where TComponent : IComponent
+            where TImplementation : IComponent;
+
+        /// <summary>
         /// 将实现组件类型注册到基本组件。
         /// </summary>
         /// <param name="component">基本组件类型。</param>
