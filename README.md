@@ -18,7 +18,7 @@
 
  **DC.Menu** : Blazor自定义菜单组件
 
- **DC.Icons.FontAwesome** : 基于Awesome的图标字体组件,须结合DC.Bue一起使用
+ **DC.Icons.FontAwesome** : 基于Awesome的图标字体组件,须结合DBlazor一起使用
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0323/143458_244fc8de_130171.png "演示图片")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/0326/184321_d2a8a44d_130171.png "演示图片")

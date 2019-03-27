@@ -1,0 +1,11 @@
+﻿@inherits DBlazor.Base.BaseTable
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <table class="@ClassMapper.Class">
+        @ChildContent
+    </table>
+}
+else
+{
+    @RenderCustomComponent()
+}

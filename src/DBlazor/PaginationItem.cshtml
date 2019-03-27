@@ -1,0 +1,13 @@
+﻿@inherits DBlazor.Base.BasePaginationItem
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <CascadingValue Value=this>
+        <li class="@ClassMapper.Class">
+            @ChildContent
+        </li>
+    </CascadingValue>
+}
+else
+{
+    @RenderCustomComponent()
+}

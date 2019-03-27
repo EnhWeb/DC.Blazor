@@ -1,0 +1,11 @@
+﻿@inherits DBlazor.Base.BaseAddonLabel
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <span class="@ClassMapper.Class">
+        @ChildContent
+    </span>
+}
+else
+{
+    @RenderCustomComponent()
+}

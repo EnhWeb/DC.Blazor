@@ -18,43 +18,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Toast", "src\Extensions\DC.Toast\DC.Toast.csproj", "{08B81C2E-BB07-4E54-AA1F-5314F7051BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Toast", "src\Extensions\DBlazor.Toast\DBlazor.Toast.csproj", "{08B81C2E-BB07-4E54-AA1F-5314F7051BBE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Localisation", "src\Extensions\DC.Localisation\DC.Localisation.csproj", "{88724EFC-DA29-48C7-9B5F-6DD3E0FB06FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Localisation", "src\Extensions\DBlazor.Localisation\DBlazor.Localisation.csproj", "{88724EFC-DA29-48C7-9B5F-6DD3E0FB06FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.LoadingBar", "src\Extensions\DC.LoadingBar\DC.LoadingBar.csproj", "{60F9528E-259D-4215-B7DE-BD49764F848A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.LoadingBar", "src\Extensions\DBlazor.LoadingBar\DBlazor.LoadingBar.csproj", "{60F9528E-259D-4215-B7DE-BD49764F848A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.HttpClientInterceptor", "src\Extensions\DC.HttpClientInterceptor\DC.HttpClientInterceptor.csproj", "{59D7C5C9-3299-45DD-AD8F-202E573AC653}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.HttpClientInterceptor", "src\Extensions\DBlazor.HttpClientInterceptor\DBlazor.HttpClientInterceptor.csproj", "{59D7C5C9-3299-45DD-AD8F-202E573AC653}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Storage", "src\Extensions\DC.Storage\DC.Storage.csproj", "{AECC7236-2E84-4CEA-8379-1E1DD9C4E9FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Storage", "src\Extensions\DBlazor.Storage\DBlazor.Storage.csproj", "{AECC7236-2E84-4CEA-8379-1E1DD9C4E9FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{35C933D0-CA57-48C4-8510-695DAB4C9270}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Menu", "src\Extensions\DC.Menu\DC.Menu.csproj", "{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Menu", "src\Extensions\DBlazor.Menu\DBlazor.Menu.csproj", "{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Modal", "src\Extensions\DC.Modal\DC.Modal.csproj", "{355FF94E-2E43-49AC-8782-AFEE5BAD6937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Modal", "src\Extensions\DBlazor.Modal\DBlazor.Modal.csproj", "{355FF94E-2E43-49AC-8782-AFEE5BAD6937}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{3EFB6087-819B-422C-A5A2-C9C8CEF2CCC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Bue", "src\DC.Bue\DC.Bue.csproj", "{4BB52FF5-CCBC-42FE-AA41-91587C6C5065}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor", "src\DBlazor\DBlazor.csproj", "{4BB52FF5-CCBC-42FE-AA41-91587C6C5065}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Bue.BootStrap", "src\DC.Bue.BootStrap\DC.Bue.BootStrap.csproj", "{86C6289A-FAE0-4ABC-9BB1-998416DC5257}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.BootStrap", "src\DBlazor.BootStrap\DBlazor.BootStrap.csproj", "{86C6289A-FAE0-4ABC-9BB1-998416DC5257}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Bue.Bulma", "src\DC.Bue.Bulma\DC.Bue.Bulma.csproj", "{4CEDAFCC-050E-4689-AC10-D500D1C8002C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Bulma", "src\DBlazor.Bulma\DBlazor.Bulma.csproj", "{4CEDAFCC-050E-4689-AC10-D500D1C8002C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Bue.LayUI", "src\DC.Bue.LayUI\DC.Bue.LayUI.csproj", "{D529CDC4-433D-4A5E-9DC2-F52FAD51211A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.LayUI", "src\DBlazor.LayUI\DBlazor.LayUI.csproj", "{D529CDC4-433D-4A5E-9DC2-F52FAD51211A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Bue.Material", "src\DC.Bue.Material\DC.Bue.Material.csproj", "{2350078D-0CB4-46E3-8C2F-1F4C723DF850}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Material", "src\DBlazor.Material\DBlazor.Material.csproj", "{2350078D-0CB4-46E3-8C2F-1F4C723DF850}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Icons.FontAwesome", "src\Extensions\DC.Icons.FontAwesome\DC.Icons.FontAwesome.csproj", "{5C5B5BC9-FF79-4B30-9F1B-6871CF35CCEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Icons.FontAwesome", "src\Extensions\DBlazor.Icons.FontAwesome\DBlazor.Icons.FontAwesome.csproj", "{5C5B5BC9-FF79-4B30-9F1B-6871CF35CCEB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Charts", "src\Extensions\DC.Charts\DC.Charts.csproj", "{4956A2E9-2BAA-457A-84AE-DAE50D61C19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Charts", "src\Extensions\DBlazor.Charts\DBlazor.Charts.csproj", "{4956A2E9-2BAA-457A-84AE-DAE50D61C19D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.Icons.Material", "src\Extensions\DC.Icons.Material\DC.Icons.Material.csproj", "{4D0FD5D9-99FA-41C0-9FA0-ECA10D53A395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Icons.Material", "src\Extensions\DBlazor.Icons.Material\DBlazor.Icons.Material.csproj", "{4D0FD5D9-99FA-41C0-9FA0-ECA10D53A395}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.SideBar", "src\Extensions\DC.SideBar\DC.SideBar.csproj", "{8CED49EC-1FB4-4B06-BD85-1F5C59B86B57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.SideBar", "src\Extensions\DBlazor.SideBar\DBlazor.SideBar.csproj", "{8CED49EC-1FB4-4B06-BD85-1F5C59B86B57}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DC.SnackBar", "src\Extensions\DC.SnackBar\DC.SnackBar.csproj", "{21AF4316-7B6D-49C5-BCD4-562F46406E7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.SnackBar", "src\Extensions\DBlazor.SnackBar\DBlazor.SnackBar.csproj", "{21AF4316-7B6D-49C5-BCD4-562F46406E7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

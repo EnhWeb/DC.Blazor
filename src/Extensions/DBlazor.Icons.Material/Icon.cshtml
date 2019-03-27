@@ -1,0 +1,11 @@
+﻿@inherits DBlazor.Base.BaseIcon
+<i class="@ClassMapper.Class">
+    @if ( Name is DBlazor.IconName )
+    {
+        @IconProvider.Get( (DBlazor.IconName)Name );
+    }
+    else if ( Name is string )
+    {
+        @IconProvider.Get( (string)Name );
+    }
+</i>

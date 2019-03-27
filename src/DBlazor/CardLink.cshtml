@@ -1,0 +1,9 @@
+﻿@inherits DBlazor.Base.BaseCardLink
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <a href="@Source" class="@ClassMapper.Class">@ChildContent</a>
+}
+else
+{
+    @RenderCustomComponent()
+}
