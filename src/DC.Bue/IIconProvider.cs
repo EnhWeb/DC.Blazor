@@ -1,36 +1,44 @@
-﻿namespace DC.Bue
+﻿#region Using directives
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+#endregion
+
+namespace DC.Bue
 {
     public interface IIconProvider
     {
         /// <summary>
-        /// 获取预定义的图标名称集合标识。
+        /// Gets the predefined icon name.
         /// </summary>
+        /// <param name="name">Icon name.</param>
         /// <returns></returns>
         string Icon();
 
         /// <summary>
-        /// 按预定义的图标类型获取图标名称。
+        /// Gets the icon name by predefined icon type.
         /// </summary>
-        /// <param name="name">图标名称</param>
+        /// <param name="name"></param>
         /// <returns></returns>
-        string Get(IconName name);
+        string Get( IconName name );
 
         /// <summary>
-        /// 覆盖预定义的图标名称。
+        /// Overrides the predefined icon name.
         /// </summary>
-        /// <param name="name">图标名称</param>
-        /// <param name="newName">对应的图标新名称</param>
-        void Set(IconName name, string newName);
+        /// <param name="name">Icon to override.</param>
+        /// <param name="newName">New icon name.</param>
+        void Set( IconName name, string newName );
 
         /// <summary>
-        /// 通过自定义图标名称获取图标名称。
+        /// Gets the icon name by the custom icon name.
         /// </summary>
-        /// <param name="customName">自定义图标名称</param>
+        /// <param name="customName"></param>
         /// <returns></returns>
-        string Get(string customName);
+        string Get( string customName );
 
         /// <summary>
-        /// 指示是否将类名定义为标记内容。
+        /// Indicates if the classname will be defined as tag content. 
         /// </summary>
         bool IconNameAsContent { get; }
     }

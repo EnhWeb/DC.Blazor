@@ -1,0 +1,19 @@
+﻿@inherits Base.BaseTextEdit
+@if ( ParentIsFieldBody )
+{
+    <div class="field">
+        <div class="control">
+            <input type="@Type" class="@ClassMapper.Class" placeholder="@Placeholder" disabled="@IsDisabled" readonly="@IsReadonly" value="@Text" maxlength="@MaxLength" onchange="@HandleOnChange" oninput="@HandleOnInput" />
+            @ChildContent
+        </div>
+        @Feedback
+    </div>
+}
+else
+{
+    <div class="control">
+        <input type="@Type" class="@ClassMapper.Class" placeholder="@Placeholder" disabled="@IsDisabled" readonly="@IsReadonly" value="@Text" maxlength="@MaxLength" onchange="@HandleOnChange" oninput="@HandleOnInput" />
+        @ChildContent
+    </div>
+    @Feedback
+}

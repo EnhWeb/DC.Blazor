@@ -1,40 +1,47 @@
-﻿using System.Linq;
+﻿#region Using directives
+using System.Collections.Generic;
+using System.Linq;
+#endregion
 
 namespace DC.Bue
 {
     public class ClassMapper : BaseMapper
     {
-        private string buildClass;
+        #region Members
+
+        private string builtClass;
+
+        #endregion
+
+        #region Methods
+
+        #endregion
+
+        #region Properties
 
         public string Class
         {
             get
             {
-                if (dirty)
+                if ( dirty )
                 {
-                    //组合样式类，但只组合具有值的样式类
-                    if (rules != null && listRules != null)
-                    {
-                        buildClass = string.Join(" ", GetValidRules().Concat(GetValidListRules()));
-                    }
-                    else if (rules != null)
-                    {
-                        buildClass = string.Join(" ", GetValidRules());
-                    }
-                    else if (listRules != null)
-                    {
-                        buildClass = string.Join(" ", GetValidListRules());
-                    }
+                    // combine the classes, but only the ones that have a value
+                    if ( rules != null && listRules != null )
+                        builtClass = string.Join( " ", GetValidRules().Concat( GetValidListRules() ) );
+                    else if ( rules != null )
+                        builtClass = string.Join( " ", GetValidRules() );
+                    else if ( listRules != null )
+                        builtClass = string.Join( " ", GetValidListRules() );
                     else
-                    {
-                        buildClass = null;
-                    }
+                        builtClass = null;
 
                     dirty = false;
                 }
 
-                return buildClass;
+                return builtClass;
             }
         }
+
+        #endregion
     }
 }

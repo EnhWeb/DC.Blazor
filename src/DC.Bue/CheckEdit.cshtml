@@ -1,0 +1,11 @@
+﻿@inherits Base.BaseCheckEdit
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <input type="@Type" class="@ClassMapper.Class" disabled="@IsDisabled" readonly="@IsReadonly" checked="@Checked" onchange="@CheckedChangedHandled" name="@RadioGroup" id="@ElementId" />
+    @ChildContent
+    @Feedback
+}
+else
+{
+    @RenderCustomComponent()
+}

@@ -1,41 +1,62 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿#region Using directives
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+#endregion
 
 namespace DC.Bue
 {
     /// <summary>
-    /// 所有自定义组件实现的映射。
+    /// Map of all custom component implementations.
     /// </summary>
     public interface IComponentMapper
     {
         /// <summary>
-        /// 获取实现组件类型。
+        /// Gets the implementation component type.
         /// </summary>
-        /// <param name="component">基础组件。</param>
+        /// <typeparam name="TComponent"></typeparam>
         /// <returns></returns>
-        Type GetImplementation(IComponent component);
+        Type GetImplementation<TComponent>()
+            where TComponent : IComponent;
 
         /// <summary>
-        /// 将实现组件注册到基本组件。
+        /// Gets the implementation component type.
         /// </summary>
-        /// <typeparam name="TComponent">基本组件类型。</typeparam>
-        /// <typeparam name="TImplementation">实现组件类型。</typeparam>
+        /// <param name="component">Base component.</param>
+        /// <returns></returns>
+        Type GetImplementation( IComponent component );
+
+        /// <summary>
+        /// Registers the implementation component to the base component.
+        /// </summary>
+        /// <typeparam name="TComponent">Base component type.</typeparam>
+        /// <typeparam name="TImplementation">Implementation component type.</typeparam>
         void Register<TComponent, TImplementation>()
             where TComponent : IComponent
             where TImplementation : IComponent;
 
         /// <summary>
-        /// 将实现组件类型注册到基本组件。
+        /// Registers the implementation component types to the base component.
         /// </summary>
-        /// <param name="component">基本组件类型。</param>
-        /// <param name="implementation">实现组件类型。</param>
-        void Register(Type component, Type implementation);
+        /// <param name="component">Base component type.</param>
+        /// <param name="implementation">Implementation component type.</param>
+        void Register( Type component, Type implementation );
 
         /// <summary>
-        /// 检查组件是否具有自定义实现。
+        /// Checks if a component type has a custom registration.
         /// </summary>
-        /// <param name="component">要检查的组件。</param>
-        /// <returns>如果注册存在，则返回true。</returns>
-        bool HasRegistration(IComponent component);
+        /// <typeparam name="TComponent">Component type to check.</typeparam>
+        /// <returns>Returns true if the registration exists.</returns>
+        bool HasRegistration<TComponent>()
+            where TComponent : IComponent;
+
+        /// <summary>
+        /// Checks if a component has a custom implementation.
+        /// </summary>
+        /// <param name="component">Component to check.</param>
+        /// <returns>Returns true if the registration exists.</returns>
+        bool HasRegistration( IComponent component );
     }
 }

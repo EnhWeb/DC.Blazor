@@ -1,138 +1,202 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿#region Using directives
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+#endregion
 
 namespace DC.Bue.Base
 {
     public abstract class BaseComponent : ComponentBase, IDisposable
     {
-        /// <summary>
-        /// 释放非托管资源
-        /// </summary>
+        #region Members
+
         private bool disposed;
+
+        private string elementId;
+
+        //private bool rendered = false;
 
         private string customClass;
 
+        private string customStyle;
+
         private IClassProvider classProvider;
 
-        /// <summary>
-        /// 默认不浮动
-        /// </summary>
+        private IStyleProvider styleProvider;
+
         private Float @float = Float.None;
 
-        /// <summary>
-        /// 外间距
-        /// </summary>
         private IFluentSpacing margin;
 
-        /// <summary>
-        /// 内间距
-        /// </summary>
         private IFluentSpacing padding;
+
+        private Visibility visibility = Visibility.Default;
 
         private ParameterCollection parameters;
 
+        #endregion
+
+        #region Constructors
+
         public BaseComponent()
         {
-            ElementId = Utils.IDGenerator.Instance.Generate;
         }
 
-        /// <summary>
-        /// 释放非托管资源
-        /// </summary>
-        ~BaseComponent()
-        {
-            Dispose(false);
-        }
+        #endregion
 
-        /// <summary>
-        /// 释放非托管和托管资源
-        /// </summary>
+        #region Methods
+
         public void Dispose()
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
+            Dispose( true );
+            GC.SuppressFinalize( this );
         }
 
-        /// <summary>
-        /// 根据条件判断是否释放托管资源
-        /// </summary>
-        /// <param name="disposing"></param>
-        protected virtual void Dispose(bool disposing)
+        protected virtual void Dispose( bool disposing )
         {
-            if (!disposed)
+            if ( !disposed )
             {
-                if (disposing)
+                if ( disposing )
                 {
-                    if (ClassMapper != null)
+                    if ( ClassMapper != null )
                     {
                         ClassMapper.Dispose();
                         ClassMapper = null;
                     }
 
-                    if (StyleMapper != null)
+                    if ( StyleMapper != null )
                     {
                         StyleMapper.Dispose();
                         StyleMapper = null;
                     }
+
+                    margin = null;
+                    padding = null;
                 }
 
                 disposed = true;
             }
         }
 
-        protected RenderFragment RenderCustomComponent()
+        //protected override void OnAfterRender()
+        //{
+        //    if ( !rendered )
+        //    {
+        //        JSRunner.Init( ElementRef, this );
+
+        //        rendered = true;
+        //    }
+
+        //    base.OnAfterRender();
+        //}
+
+        protected virtual void RegisterClasses()
         {
-            return builder =>
+            ClassMapper
+                .If( () => Class, () => Class != null )
+                .If( () => Margin.Class( classProvider ), () => Margin != null )
+                .If( () => Padding.Class( classProvider ), () => Padding != null )
+                .If( () => ClassProvider.Float( Float ), () => Float != Float.None );
+        }
+
+        protected virtual void RegisterStyles()
+        {
+            StyleMapper
+                .If( () => Style, () => Style != null )
+                .Add( () => StyleProvider.Visibility( Visibility ) );
+        }
+
+        // use this until https://github.com/aspnet/Blazor/issues/1732 is fixed!!
+        internal protected virtual void Dirty()
+        {
+        }
+
+        public override Task SetParametersAsync( ParameterCollection parameters )
+        {
+            if ( ComponentMapper.HasRegistration( this ) )
             {
-                builder.OpenComponent(0, ComponentMapper.GetImplementation(this));
+                // the component has a custom implementation so we need to copy the parameters for manual rendering
+                this.parameters = parameters;
 
-                foreach (var parameter in parameters)
-                {
-                    builder.AddAttribute(1, parameter.Name, parameter.Value);
-                }
-
-                builder.CloseComponent();
-            };
+                return base.SetParametersAsync( ParameterCollection.Empty );
+            }
+            else
+                return base.SetParametersAsync( parameters );
         }
 
         /// <summary>
-        /// 获取Class映射器
+        /// Main method to render custom component implementation.
+        /// </summary>
+        /// <returns></returns>
+        protected RenderFragment RenderCustomComponent() => builder =>
+        {
+            builder.OpenComponent( 0, ComponentMapper.GetImplementation( this ) );
+
+            foreach ( var parameter in parameters )
+            {
+                builder.AddAttribute( 1, parameter.Name, parameter.Value );
+            }
+
+            builder.CloseComponent();
+        };
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the reference to the rendered element.
+        /// </summary>
+        public ElementRef ElementRef { get; protected set; }
+
+        /// <summary>
+        /// Gets the unique id of the element.
+        /// </summary>
+        /// <remarks>
+        /// Note that this ID is not defined for the component but instead for the underlined component that it represents.
+        /// eg: for the TextEdit the ID will be set on the input element.
+        /// </remarks>
+        public string ElementId
+        {
+            get
+            {
+                // generate ID only on first use
+                if ( elementId == null )
+                    elementId = Utils.IDGenerator.Instance.Generate;
+
+                return elementId;
+            }
+        }
+
+        /// <summary>
+        /// Gets the class mapper.
         /// </summary>
         protected ClassMapper ClassMapper { get; private set; } = new ClassMapper();
 
         /// <summary>
-        /// 获取样式映射器
+        /// Gets the style mapper.
         /// </summary>
         protected StyleMapper StyleMapper { get; private set; } = new StyleMapper();
 
         /// <summary>
-        /// 获取或设置自定义组件映射器。
+        /// Gets or sets the custom components mapper.
         /// </summary>
         [Inject] protected IComponentMapper ComponentMapper { get; set; }
 
         /// <summary>
-        /// 获取元素的唯一ID。
+        /// Gets or set the javascript runner.
         /// </summary>
-        public string ElementId { get; }
+        [Inject] protected IJSRunner JSRunner { get; set; }
 
         /// <summary>
-        /// 注册样式类
+        /// Gets or sets the classname provider.
         /// </summary>
-        protected virtual void RegisterClasses()
+        [Inject]
+        protected IClassProvider ClassProvider
         {
-            ClassMapper
-                .If(() => Class, () => Class != null)
-                .If(() => Margin.Class(classProvider), () => Margin != null)
-                .If(() => Padding.Class(classProvider), () => Padding != null)
-                .If(() => ClassProvider.Float(Float), () => Float != Float.None);
-        }
-
-        [Inject] protected IClassProvider ClassProvider
-        {
-            get
-            {
-                return classProvider;
-            }
+            get => classProvider;
             set
             {
                 classProvider = value;
@@ -142,14 +206,27 @@ namespace DC.Bue.Base
         }
 
         /// <summary>
-        /// Class元素的名称
+        /// Gets or sets the style provider.
         /// </summary>
-        [Parameter] protected string Class
+        [Inject]
+        protected IStyleProvider StyleProvider
         {
-            get
+            get => styleProvider;
+            set
             {
-                return customClass;
+                styleProvider = value;
+
+                RegisterStyles();
             }
+        }
+
+        /// <summary>
+        /// Custom css classname.
+        /// </summary>
+        [Parameter]
+        protected string Class
+        {
+            get => customClass;
             set
             {
                 customClass = value;
@@ -159,14 +236,27 @@ namespace DC.Bue.Base
         }
 
         /// <summary>
-        /// 浮动元素。
+        /// Custom html style.
         /// </summary>
-        [Parameter] protected Float Float
+        [Parameter]
+        protected string Style
         {
-            get
+            get => customStyle;
+            set
             {
-                return @float;
+                customStyle = value;
+
+                StyleMapper.Dirty();
             }
+        }
+
+        /// <summary>
+        /// Floats an element to the defined side.
+        /// </summary>
+        [Parameter]
+        protected Float Float
+        {
+            get => @float;
             set
             {
                 @float = value;
@@ -176,14 +266,12 @@ namespace DC.Bue.Base
         }
 
         /// <summary>
-        /// 定义元素边距。
+        /// Defines the element margin spacing.
         /// </summary>
-        [Parameter] protected IFluentSpacing Margin
+        [Parameter]
+        protected IFluentSpacing Margin
         {
-            get
-            {
-                return margin;
-            }
+            get => margin;
             set
             {
                 margin = value;
@@ -193,14 +281,12 @@ namespace DC.Bue.Base
         }
 
         /// <summary>
-        /// 定义元素填充间距。
+        /// Defines the element padding spacing.
         /// </summary>
-        [Parameter] protected IFluentSpacing Padding
+        [Parameter]
+        protected IFluentSpacing Padding
         {
-            get
-            {
-                return padding;
-            }
+            get => padding;
             set
             {
                 padding = value;
@@ -208,5 +294,22 @@ namespace DC.Bue.Base
                 ClassMapper.Dirty();
             }
         }
+
+        /// <summary>
+        /// Gets or sets the element visibility.
+        /// </summary>
+        [Parameter]
+        protected Visibility Visibility
+        {
+            get => visibility;
+            set
+            {
+                visibility = value;
+
+                StyleMapper.Dirty();
+            }
+        }
+
+        #endregion
     }
 }

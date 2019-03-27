@@ -1,0 +1,11 @@
+﻿@inherits Blazorise.Base.BaseLabel
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <label class="@ClassMapper.Class" for="@For">
+        @ChildContent
+    </label>
+}
+else
+{
+    @RenderCustomComponent()
+}

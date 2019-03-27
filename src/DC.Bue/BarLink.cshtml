@@ -1,0 +1,20 @@
+﻿@inherits Blazorise.Base.BaseBarLink
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    @if ( To != null )
+    {
+        <LinkBase TagName="a" class="@ClassMapper.Class" href="@To" title="@Title" Match="@Match">
+            @ChildContent
+        </LinkBase>
+    }
+    else
+    {
+        <a class="@ClassMapper.Class" title="@Title" onclick="@ClickHandler">
+            @ChildContent
+        </a>
+    }
+}
+else
+{
+    @RenderCustomComponent()
+}

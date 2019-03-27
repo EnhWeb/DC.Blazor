@@ -1,0 +1,11 @@
+﻿@inherits Blazorise.Base.BaseTableHeaderCell
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <th scope="col" class="@ClassMapper.Class">
+        @ChildContent
+    </th>
+}
+else
+{
+    @RenderCustomComponent()
+}

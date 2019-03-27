@@ -1,0 +1,11 @@
+﻿@inherits Blazorise.Base.BaseListGroupItem
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <li class="@ClassMapper.Class">
+        @ChildContent
+    </li>
+}
+else
+{
+    @RenderCustomComponent()
+}

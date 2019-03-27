@@ -1,0 +1,11 @@
+﻿@inherits Blazorise.Base.BaseFigure
+@if ( !ComponentMapper.HasRegistration( this ) )
+{
+    <figure class="@ClassMapper.Class">
+        @ChildContent
+    </figure>
+}
+else
+{
+    @RenderCustomComponent()
+}

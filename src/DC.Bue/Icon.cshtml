@@ -1,16 +1,16 @@
-﻿@inherits DC.Bue.Base.BaseIcon
-@if (!ComponentMapper.HasRegistration(this))
+﻿@inherits Blazorise.Base.BaseIcon
+@if ( !ComponentMapper.HasRegistration( this ) )
 {
     <i class="@ClassMapper.Class">
-        @if (IconProvider.IconNameAsContent && Name != null)
+        @if ( IconProvider.IconNameAsContent && Name != null )
         {
-            if (Name is IconName)
+            if ( Name is IconName )
             {
-                @IconProvider.Get((IconName)Name);
+                @IconProvider.Get( (IconName)Name );
             }
-            else if (Name is string)
+            else if ( Name is string )
             {
-                @IconProvider.Get((string)Name);
+                @IconProvider.Get( (string)Name );
             }
         }
     </i>
