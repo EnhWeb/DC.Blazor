@@ -9,11 +9,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>DC.Icons.FontAwesome</AssemblyName>
-    <RootNamespace>DC.Icons.FontAwesome</RootNamespace>
+    <AssemblyName>DC.Charts</AssemblyName>
+    <RootNamespace>DC.Charts</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>云企微商Blazor Awesome字体图标组件</AssemblyTitle>
-    <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的Awesome字体图标组件。</Description>
+    <AssemblyTitle>云企微商Blazor 图表组件</AssemblyTitle>
+    <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的图表组件。</Description>
     <Company>深圳云企微商网络科技有限公司</Company>
     <Copyright>©2002-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
@@ -30,7 +30,7 @@
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
-    <PackageReleaseNotes>客户端Blazor应用程序上的Awesome字体图标组件</PackageReleaseNotes>
+    <PackageReleaseNotes>客户端Blazor应用程序上的图表组件</PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Blazor</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Blazor</RepositoryUrl>
@@ -51,7 +51,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DC.Icons.FontAwesome.csproj.DotSettings" />
+    <None Remove="DC.Charts.csproj.DotSettings" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,7 +67,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="content\charts.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\DC.Bue\DC.Bue.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Chart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>
