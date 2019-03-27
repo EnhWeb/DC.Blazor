@@ -1,7 +1,7 @@
 ﻿#region Using directives
 using System.Linq;
 using System.Threading.Tasks;
-using Blazorise.Utils;
+using DC.Bue.Utils;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 #endregion

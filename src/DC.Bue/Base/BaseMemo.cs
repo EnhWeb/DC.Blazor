@@ -51,7 +51,7 @@ namespace DC.Bue.Base
 
         #region Properties
 
-        [Inject] protected BlazoriseOptions Options { get; set; }
+        [Inject] protected DCOptions Options { get; set; }
 
         /// <summary>
         /// Sets the placeholder for the empty text.

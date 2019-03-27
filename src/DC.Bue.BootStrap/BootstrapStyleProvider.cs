@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bootstrap
+namespace DC.Bue.BootStrap
 {
-    public class BootstrapStyleProvider : IStyleProvider
+    public class BootStrapStyleProvider : IStyleProvider
     {
         #region Modal
 
@@ -29,7 +29,7 @@ namespace Blazorise.Bootstrap
 
         #region Layout
 
-        public string Visibility( Visibility visibility ) => visibility == Blazorise.Visibility.Never ? "display: none;" : null;
+        public string Visibility( Visibility visibility ) => visibility == DC.Bue.Visibility.Never ? "display: none;" : null;
 
         #endregion
     }

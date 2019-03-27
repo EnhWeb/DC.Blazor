@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Blazorise.Bootstrap": {
+    "DC.Bue.BootStrap": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

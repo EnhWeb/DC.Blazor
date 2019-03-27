@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bootstrap.BootstrapBase
+namespace DC.Bue.BootStrap.BootStrapBase
 {
-    public abstract class BaseBootstrapField : Blazorise.Base.BaseField
+    public abstract class BaseBootStrapField : DC.Bue.Base.BaseField
     {
         #region Members
 

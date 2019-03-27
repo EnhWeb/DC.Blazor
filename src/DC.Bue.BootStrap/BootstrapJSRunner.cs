@@ -4,18 +4,18 @@ using System;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bootstrap
+namespace DC.Bue.BootStrap
 {
-    public partial class BootstrapJSRunner : JSRunner
+    public partial class BootStrapJSRunner : JSRunner
     {
-        public BootstrapJSRunner( IJSRuntime runtime )
+        public BootStrapJSRunner( IJSRuntime runtime )
             : base( runtime )
         {
         }
 
         //public override Task<bool> ActivateDatePicker( string elementId )
         //{
-        //    return JSRuntime.Current.InvokeAsync<bool>( $"blazoriseBootstrap.activateDatePicker", elementId );
+        //    return JSRuntime.Current.InvokeAsync<bool>( $"DC.BueBootStrap.activateDatePicker", elementId );
         //}
     }
 }

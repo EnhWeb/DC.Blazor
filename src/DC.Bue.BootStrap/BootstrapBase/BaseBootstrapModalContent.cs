@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 #endregion
 
-namespace Blazorise.Bootstrap.BootstrapBase
+namespace DC.Bue.BootStrap.BootStrapBase
 {
-    public abstract class BaseBootstrapModalContent : Base.BaseModalContent
+    public abstract class BaseBootStrapModalContent : Base.BaseModalContent
     {
         #region Members
 

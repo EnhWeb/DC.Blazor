@@ -16,7 +16,7 @@ namespace DC.Bue.Base
 
         private bool isRightAligned;
 
-        private Direction direction = Blazorise.Direction.Down;
+        private Direction direction = DC.Bue.Direction.Down;
 
         private BaseDropdownMenu dropdownMenu;
 

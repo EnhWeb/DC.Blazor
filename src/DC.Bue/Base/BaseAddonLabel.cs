@@ -8,8 +8,7 @@ namespace DC.Bue.Base
 
         protected override void RegisterClasses()
         {
-            ClassMapper
-                .Add(() => ClassProvider.AddonLabel());
+            ClassMapper.Add(() => ClassProvider.AddonLabel());
 
             base.RegisterClasses();
         }

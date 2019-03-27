@@ -1,40 +1,14 @@
-﻿#region Using directives
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-#endregion
+﻿using Microsoft.AspNetCore.Components;
 
 namespace DC.Bue.Base
 {
     public abstract class BaseBadge : BaseComponent
     {
-        #region Members
-
         private bool isPill;
 
         private Color color = Color.None;
 
         private string link;
-
-        #endregion
-
-        #region Methods
-
-        protected override void RegisterClasses()
-        {
-            ClassMapper
-                .Add( () => ClassProvider.Badge() )
-                .If( () => ClassProvider.BadgeColor( Color ), () => Color != Color.None )
-                .If( () => ClassProvider.BadgePill(), () => IsPill );
-
-            base.RegisterClasses();
-        }
-
-        #endregion
-
-        #region Properties
 
         [Parameter]
         protected bool IsPill
@@ -74,6 +48,14 @@ namespace DC.Bue.Base
 
         [Parameter] protected RenderFragment ChildContent { get; set; }
 
-        #endregion
+        protected override void RegisterClasses()
+        {
+            ClassMapper
+                .Add(() => ClassProvider.Badge())
+                .If(() => ClassProvider.BadgeColor(Color), () => Color != Color.None)
+                .If(() => ClassProvider.BadgePill(), () => IsPill);
+
+            base.RegisterClasses();
+        }
     }
 }

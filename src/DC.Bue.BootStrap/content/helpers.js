@@ -1,13 +1,13 @@
-if (!window.blazoriseBootstrap) {
-    window.blazoriseBootstrap = {};
+if (!window.DC.BueBootStrap) {
+    window.DC.BueBootStrap = {};
 }
 
-window.blazoriseBootstrap = {
+window.DC.BueBootStrap = {
     //activateDatePicker: (elementId, formatSubmit) => {
     //    const element = $(`#${elementId}`);
 
     //    element.datepicker({
-    //        uiLibrary: 'bootstrap4',
+    //        uiLibrary: 'BootStrap4',
     //        format: 'yyyy-mm-dd',
     //        showOnFocus: true,
     //        showRightIcon: true,

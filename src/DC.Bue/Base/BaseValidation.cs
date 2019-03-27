@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Blazorise.Utils;
+using DC.Bue.Utils;
 using Microsoft.AspNetCore.Components;
 #endregion
 
