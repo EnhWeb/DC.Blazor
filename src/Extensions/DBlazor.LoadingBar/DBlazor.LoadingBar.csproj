@@ -73,7 +73,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DC.HttpClientInterceptor\DBlazor.HttpClientInterceptor.csproj" />
+    <ProjectReference Include="..\DBlazor.HttpClientInterceptor\DBlazor.HttpClientInterceptor.csproj" />
   </ItemGroup>
 
 </Project>

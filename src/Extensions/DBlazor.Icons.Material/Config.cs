@@ -1,10 +1,9 @@
 #region Using directives
-using DBlazor;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 #endregion
 
-namespace DC.Icons.Material
+namespace DBlazor.Icons.Material
 {
     public static class Config
     {

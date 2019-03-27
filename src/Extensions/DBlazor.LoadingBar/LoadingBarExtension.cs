@@ -1,4 +1,4 @@
-﻿using DC.LoadingBar;
+﻿using DBlazor.LoadingBar;
 using Microsoft.AspNetCore.Components.Builder;
 using System.Linq;
 

@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DC.HttpClientInterceptor
+namespace DBlazor.HttpClientInterceptor
 {
     /// <summary>
     /// 拦截Blazor客户端应用程序上的所有发送的HTTP请求。

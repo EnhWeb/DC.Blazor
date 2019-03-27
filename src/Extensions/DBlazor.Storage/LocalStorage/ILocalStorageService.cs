@@ -5,7 +5,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace DC.Storage
+namespace DBlazor.Storage
 {
     /// <summary>
     /// 异步存储接口

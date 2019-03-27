@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.RenderTree;
 using Microsoft.AspNetCore.Components.Routing;
 using System;
 
-namespace DC.Menu
+namespace DBlazor.Menu
 {
     public class DCMenu : ComponentBase
     {

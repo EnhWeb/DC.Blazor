@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DC.Modal.Services
+namespace DBlazor.Modal.Services
 {
     public interface IModalService
     {

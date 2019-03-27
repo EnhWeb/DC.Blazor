@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DC.Modal
+namespace DBlazor.Modal
 {
     public class ModalParameters
     {

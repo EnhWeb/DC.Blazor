@@ -1,4 +1,4 @@
-﻿using DC.Localisation;
+﻿using DBlazor.Localisation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
 using System.Globalization;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DC.Menu
+namespace DBlazor.Menu
 {
     /// <summary>
     /// 菜单构建器

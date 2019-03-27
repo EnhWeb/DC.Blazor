@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace DC.Localisation
+namespace DBlazor.Localisation
 {
     public class LocalisationService : ILocalisationService
     {

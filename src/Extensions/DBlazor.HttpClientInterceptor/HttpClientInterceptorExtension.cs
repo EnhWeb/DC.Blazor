@@ -1,4 +1,4 @@
-﻿using DC.HttpClientInterceptor;
+﻿using DBlazor.HttpClientInterceptor;
 using Microsoft.AspNetCore.Components.Builder;
 using System.Linq;
 

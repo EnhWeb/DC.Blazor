@@ -4,7 +4,7 @@
 
 using System;
 
-namespace DC.Toast.Services
+namespace DBlazor.Toast.Services
 {
     /// <summary>
     /// 提示框服务

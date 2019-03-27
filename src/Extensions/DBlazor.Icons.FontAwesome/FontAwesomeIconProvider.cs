@@ -1,8 +1,7 @@
-﻿using DBlazor;
-using DBlazor.Providers;
+﻿using DBlazor.Providers;
 using System.Collections.Generic;
 
-namespace DC.Icons.FontAwesome
+namespace DBlazor.Icons.FontAwesome
 {
     internal class FontAwesomeIconProvider : BaseIconProvider
     {

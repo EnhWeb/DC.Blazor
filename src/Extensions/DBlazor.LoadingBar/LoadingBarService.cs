@@ -1,8 +1,8 @@
-﻿using DC.HttpClientInterceptor;
+﻿using DBlazor.HttpClientInterceptor;
 using Microsoft.JSInterop;
 using System;
 
-namespace DC.LoadingBar
+namespace DBlazor.LoadingBar
 {
     public class LoadingBarService : IDisposable
     {

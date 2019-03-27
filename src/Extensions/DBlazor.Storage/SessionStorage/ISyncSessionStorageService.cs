@@ -4,7 +4,7 @@
 
 using System;
 
-namespace DC.Storage
+namespace DBlazor.Storage
 {
     /// <summary>
     /// 同步存储接口

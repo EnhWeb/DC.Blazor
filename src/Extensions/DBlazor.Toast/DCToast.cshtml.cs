@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using System;
 
-namespace DC.Toast
+namespace DBlazor.Toast
 {
     public class DCToastBase : ComponentBase
     {

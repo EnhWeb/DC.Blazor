@@ -2,13 +2,13 @@
 // ∂°¥® QQ£∫2505111990 Œ¢–≈£∫i230760 qq»∫:774046050 ” œ‰:2505111990@qq.com
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-using DC.Toast.Services;
+using DBlazor.Toast.Services;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Timers;
 
-namespace DC.Toast
+namespace DBlazor.Toast
 {
     public class DCToastsBase : ComponentBase
     {

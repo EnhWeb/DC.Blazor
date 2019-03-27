@@ -1,5 +1,5 @@
 ﻿using DBlazor;
-using DC.Icons.FontAwesome;
+using DBlazor.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.Builder;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -30,7 +30,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             var componentMapper = app.Services.GetRequiredService<IComponentMapper>();
 
-            componentMapper.Register<DBlazor.Icon, DC.Icons.FontAwesome.Icon>();
+            componentMapper.Register<DBlazor.Icon, DBlazor.Icons.FontAwesome.Icon>();
 
             return app;
         }

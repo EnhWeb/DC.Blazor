@@ -6,7 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
-namespace DC.Storage
+namespace DBlazor.Storage
 {
     /// <summary>
     /// 本地存储服务

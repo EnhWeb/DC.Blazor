@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using DBlazor;
 using DBlazor.Providers;
 
-namespace DC.Icons.Material
+namespace DBlazor.Icons.Material
 {
     class MaterialIconProvider : BaseIconProvider
     {
