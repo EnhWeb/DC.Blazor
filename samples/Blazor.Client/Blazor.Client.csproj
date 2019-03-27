@@ -16,15 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DC.Bue\DC.Bue.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.HttpClientInterceptor\DBlazor.HttpClientInterceptor.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.Icons.FontAwesome\DBlazor.Icons.FontAwesome.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.LoadingBar\DBlazor.LoadingBar.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.Localisation\DBlazor.Localisation.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.Menu\DBlazor.Menu.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.Modal\DBlazor.Modal.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.Storage\DBlazor.Storage.csproj" />
-    <ProjectReference Include="..\..\src\Extensions\DC.Toast\DBlazor.Toast.csproj" />
+    <ProjectReference Include="..\..\src\DBlazor\DBlazor.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.HttpClientInterceptor\DBlazor.HttpClientInterceptor.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.Icons.FontAwesome\DBlazor.Icons.FontAwesome.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.LoadingBar\DBlazor.LoadingBar.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.Localisation\DBlazor.Localisation.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.Menu\DBlazor.Menu.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.DModal\DBlazor.DModal.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.Storage\DBlazor.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DBlazor.Toast\DBlazor.Toast.csproj" />
     <ProjectReference Include="..\Blazor.Shared\Blazor.Shared.csproj" />
   </ItemGroup>
 

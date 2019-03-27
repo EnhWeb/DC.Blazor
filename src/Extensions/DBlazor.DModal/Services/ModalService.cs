@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 
-namespace DBlazor.Modal.Services
+namespace DBlazor.DModal.Services
 {
     public class ModalService : IModalService
     {

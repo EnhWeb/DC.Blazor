@@ -9,8 +9,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>DBlazor.Modal</AssemblyName>
-    <RootNamespace>DBlazor.Modal</RootNamespace>
+    <AssemblyName>DBlazor.DModal</AssemblyName>
+    <RootNamespace>DBlazor.DModal</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>云企微商Blazor弹出窗体组件</AssemblyTitle>
     <Description>$(AssemblyName)是深圳云企微商网络科技有限公司基于.net core平台开发的应用框架中的用于访问Blazor应用程序中的弹出窗体组件。</Description>
@@ -51,7 +51,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DBlazor.Modal.csproj.DotSettings" />
+    <None Remove="DBlazor.DModal.csproj.DotSettings" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,8 +1,8 @@
-using DBlazor.Modal.Services;
+using DBlazor.DModal.Services;
 using Microsoft.AspNetCore.Components;
 using System;
 
-namespace DBlazor.Modal
+namespace DBlazor.DModal
 {
     public class DCModalBase : ComponentBase, IDisposable
     {

@@ -1,4 +1,4 @@
-﻿using DBlazor.Modal.Services;
+﻿using DBlazor.DModal.Services;
 using System.Linq;
 
 namespace Microsoft.Extensions.DependencyInjection

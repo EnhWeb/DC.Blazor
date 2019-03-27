@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{35C9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Menu", "src\Extensions\DBlazor.Menu\DBlazor.Menu.csproj", "{8B8F478A-A396-4E8B-94B3-96FC520E9D4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.Modal", "src\Extensions\DBlazor.Modal\DBlazor.Modal.csproj", "{355FF94E-2E43-49AC-8782-AFEE5BAD6937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBlazor.DModal", "src\Extensions\DBlazor.DModal\DBlazor.DModal.csproj", "{355FF94E-2E43-49AC-8782-AFEE5BAD6937}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{3EFB6087-819B-422C-A5A2-C9C8CEF2CCC5}"
 EndProject
