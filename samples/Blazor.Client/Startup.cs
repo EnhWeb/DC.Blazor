@@ -20,6 +20,13 @@ namespace Blazor.Client
             services.AddDCLoadingBar();  // 注册顶部加载进度组件
 
             services.AddDCModal();  // 注册模态组件
+
+            services.AddDCBue(options =>
+            {
+                options.ChangeTextOnKeyPress = true;
+            })
+            .AddDCEmptyProviders()
+            .AddDCFontAwesomeIcons();  // 注册AwesomeIcons组件
         }
 
         public void Configure(IComponentsApplicationBuilder app)
@@ -31,7 +38,9 @@ namespace Blazor.Client
             //httpInterceptor.BeforeSend += HttpInterceptor_BeforeSend;
             //httpInterceptor.AfterSend += HttpInterceptor_AfterSend;
 
-            app.UseDCLoadingBar();
+            app.UseDCLoadingBar();  // 使用网页加载顶部导航组件
+
+            app.UseDCFontAwesomeIcons();  //使用AwesomeIcons组件
 
             app.AddComponent<App>("app");
         }

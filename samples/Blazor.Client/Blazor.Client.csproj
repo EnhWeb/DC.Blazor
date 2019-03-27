@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\DC.Bue\DC.Bue.csproj" />
     <ProjectReference Include="..\..\src\Extensions\DC.HttpClientInterceptor\DC.HttpClientInterceptor.csproj" />
+    <ProjectReference Include="..\..\src\Extensions\DC.Icons.FontAwesome\DC.Icons.FontAwesome.csproj" />
     <ProjectReference Include="..\..\src\Extensions\DC.LoadingBar\DC.LoadingBar.csproj" />
     <ProjectReference Include="..\..\src\Extensions\DC.Localisation\DC.Localisation.csproj" />
     <ProjectReference Include="..\..\src\Extensions\DC.Menu\DC.Menu.csproj" />
