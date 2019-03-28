@@ -7,6 +7,9 @@
  **每个组件的使用说明请过入各项目查看说明文件，Samples里的Demo也有各组件的使用方法。** 
 
 
+安装运行需要net core 3.0
+
+
  **DC.LocalStorage** : Blazor前端本地存储组件
 
  **DC.Toast** : Blazor前端提示框组件
