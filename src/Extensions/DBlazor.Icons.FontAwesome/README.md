@@ -1,4 +1,4 @@
-###  **DC.Icons.FontAwesome** 
+###  **DBlazor.Icons.FontAwesome** 
 
 是一个基于FontAwesome的字体图标组件。
 
@@ -7,13 +7,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.Icons.FontAwesome
+Install-Package DBlazor.Icons.FontAwesome
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.Icons.FontAwesome
+dotnet add package DBlazor.Icons.FontAwesome
 ```
 
 或者通过Visual Studio包管理器。

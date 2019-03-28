@@ -1,4 +1,4 @@
-###  **DC.HttpClientInterceptor** 
+###  **DBlazor.HttpClientInterceptor** 
 
 是一个用于Blazor中拦截Blazor应用程序上所有发送HTTP请求的类库。
 
@@ -7,13 +7,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.HttpClientInterceptor
+Install-Package DBlazor.HttpClientInterceptor
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.HttpClientInterceptor
+dotnet add package DBlazor.HttpClientInterceptor
 ```
 
 或者通过Visual Studio包管理器。
@@ -41,14 +41,14 @@ public void Configure(IComponentsApplicationBuilder app)
 2.可以在任何可以从DI窗口获取HttpClientInterceptor服务的地方订阅所有发送HTTP请求之前/之后发生的事件。
 
 ```
-@using DC.HttpClientInterceptor
+@using DBlazor.HttpClientInterceptor
 @inject HttpClientInterceptorService Interceptor
 ```
 
 ###  **用法** 
 
 ```
-@using DC.HttpClientInterceptor
+@using DBlazor.HttpClientInterceptor
 @inject HttpClientInterceptorService Interceptor
 
 @functions {

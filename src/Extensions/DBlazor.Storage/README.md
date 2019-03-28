@@ -1,4 +1,4 @@
-###  **DC.Storage** 
+###  **DBlazor.Storage** 
 
 是一个用于访问Blazor应用程序中前端的本地存储类。
 
@@ -7,13 +7,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.Storage
+Install-Package DBlazor.Storage
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.Storage
+dotnet add package DBlazor.Storage
 ```
 
 或者通过Visual Studio包管理器。
@@ -33,7 +33,7 @@ public void ConfigureServices (IServiceCollection services)
 
 
 ```
-@inject DC.Storage.ILocalStorageService localStorage
+@inject DBlazor.Storage.ILocalStorageService localStorage
 
 @functions {
 
@@ -50,7 +50,7 @@ public void ConfigureServices (IServiceCollection services)
 或者在.cshtml文件中使用
 
 ```
-@using DC.Storage
+@using DBlazor.Storage
 @inject ILocalStorageService localStorage
 
 @functions {
@@ -77,6 +77,5 @@ public void ConfigureServices (IServiceCollection services)
 
 ###  **说明** 
 
-1. 所有在ILocalStorageService中的方法都是异步的，如果您使用Blazor（不是Razor组件），您可以选择注入DC.Storage.ISyncStorageService来选择允许您避免使用async/await的同步API。对于任一接口，方法名称都相同。
-2. DC.Storage方法将为您处理数据的序列化和反序列化。
-
+1. 所有在ILocalStorageService中的方法都是异步的，如果您使用Blazor（不是Razor组件），您可以选择注入DBlazor.Storage.ISyncStorageService来选择允许您避免使用async/await的同步API。对于任一接口，方法名称都相同。
+2. DBlazor.Storage方法将为您处理数据的序列化和反序列化。

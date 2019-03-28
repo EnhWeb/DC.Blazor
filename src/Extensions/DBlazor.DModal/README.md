@@ -7,13 +7,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.Modal
+Install-Package DBlazor.DModal
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.Modal
+dotnet add package DBlazor.DModal
 ```
 
 或者通过Visual Studio包管理器。
@@ -32,11 +32,11 @@ public void ConfigureServices (IServiceCollection services)
 2.在_ViewImports.cshtml文件中引用
 
 ```
-@using DC
-@using DC.Modal
-@using DC.Modal.Services
+@using DBlazor
+@using DBlazor.DModal
+@using DBlazor.DModal.Services
 
-@addTagHelper *, DC.Modal
+@addTagHelper *, DBlazor.DModal
 ```
 
 3.在MainLayout.cshtml中注册Toast组件

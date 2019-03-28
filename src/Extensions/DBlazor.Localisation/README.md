@@ -1,4 +1,4 @@
-###  **DC.Localisation** 
+###  **DBlazor.Localisation** 
 
 是一个用于访问Blazor应用程序中前端的本地化组件。
 
@@ -7,13 +7,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.Localisation
+Install-Package DBlazor.Localisation
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.Localisation
+dotnet add package DBlazor.Localisation
 ```
 
 或者通过Visual Studio包管理器。
@@ -61,12 +61,12 @@ public void ConfigureServices(IServiceCollection services)
 
 2.在.cshtml中添加引用
 ```
-@using DC.Localisation
+@using DBlazor.Localisation
 @inject ILocalisationService localisationService
 ```
 
 ```
-@using DC.Localisation
+@using DBlazor.Localisation
 @inject ILocalisationService localisationService
 
 <p>The current date and time is: <strong>@DateTime.Now</strong></p>

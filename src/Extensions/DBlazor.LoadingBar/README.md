@@ -1,4 +1,4 @@
-###  **DC.LoadingBar** 
+###  **DBlazor.LoadingBar** 
 
 是一个用于访问Blazor应用程序中Http请求网页顶部进度条。
 
@@ -9,13 +9,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.LoadingBar
+Install-Package DBlazor.LoadingBar
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.LoadingBar
+dotnet add package DBlazor.LoadingBar
 ```
 
 或者通过Visual Studio包管理器。

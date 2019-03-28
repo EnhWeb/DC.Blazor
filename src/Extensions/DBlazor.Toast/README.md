@@ -1,4 +1,4 @@
-###  **DC.Toast** 
+###  **DBlazor.Toast** 
 
 是一个用于Blazor中弹出消息提示框的组件。
 
@@ -7,13 +7,13 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package DC.Toast
+Install-Package DBlazor.Toast
 ```
 
 或者通过dotnet CLI
 
 ```
-dotnet add package DC.Toast
+dotnet add package DBlazor.Toast
 ```
 
 或者通过Visual Studio包管理器。
@@ -32,10 +32,10 @@ public void ConfigureServices (IServiceCollection services)
 2.在_ViewImports.cshtml文件中引用
 
 ```
-@using DC
-@using DC.Toast.Services
+@using DBlazor
+@using DBlazor.Toast.Services
 
-@addTagHelper *, DC.Toast
+@addTagHelper *, DBlazor.Toast
 ```
 
 3.在MainLayout.cshtml中注册Toast组件
