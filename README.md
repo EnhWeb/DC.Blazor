@@ -6,6 +6,7 @@
 
  **每个组件的使用说明请过入各项目查看说明文件，Samples里的Demo也有各组件的使用方法。** 
 
+目前正在开发的后端框架：DC.Framework,项目地址是：[https://gitee.com/xingchensoft/DC.Framework](https://gitee.com/xingchensoft/DC.Framework)，支持netstandard2.0/2.1,对应支持net core app 2.0/3.0,后端项目尽可能的会与DC.Blazor兼容使用
 
 安装运行需要net core 3.0
 
