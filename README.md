@@ -8,6 +8,8 @@
 
 目前正在开发的后端框架：DC.Framework,项目地址是：[https://gitee.com/xingchensoft/DC.Framework](https://gitee.com/xingchensoft/DC.Framework)，支持netstandard2.0/2.1,对应支持net core app 2.0/3.0,后端项目尽可能的会与DC.Blazor兼容使用
 
+请大家支持我新的项目，基于net core2.2开发的Git Server开源项目。[GitDC](https://gitee.com/xingchensoft/GitDC)
+
 安装运行需要net core 3.0
 
 
