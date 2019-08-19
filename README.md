@@ -12,6 +12,8 @@
 
 安装运行需要net core 3.0
 
+安装命令：dotnet new -i Microsoft.AspNetCore.Blazor.Templates::3.0.0-preview8.19405.7
+
 
  **DC.LocalStorage** : Blazor前端本地存储组件
 
