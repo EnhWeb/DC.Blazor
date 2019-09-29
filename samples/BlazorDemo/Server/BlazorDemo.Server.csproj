@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ding.Applications" Version="1.0.0-preview-20190925-05" />
+    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190925-05" />
+    <PackageReference Include="Ding.Logs" Version="1.0.0-preview-20190925-05" />
+    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190925-05" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview9.19465.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\BlazorDemo.Client.csproj" />
+    <ProjectReference Include="..\Shared\BlazorDemo.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\DbScripts\Oracle\" />
+    <Folder Include="Data\DbScripts\PgSql\" />
+    <Folder Include="Data\DbScripts\Sqlite\" />
+    <Folder Include="Data\Mappings\Oracle\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App_Data\dccrm.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
