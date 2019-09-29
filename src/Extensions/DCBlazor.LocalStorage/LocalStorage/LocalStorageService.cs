@@ -4,7 +4,7 @@ using System;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace DCBlazor.Storage.LocalStorage
+namespace DCBlazor.Storage
 {
     /// <summary>
     /// 本地存储服务

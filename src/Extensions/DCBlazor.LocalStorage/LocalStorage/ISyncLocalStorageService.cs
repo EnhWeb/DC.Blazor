@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DCBlazor.Storage.LocalStorage
+namespace DCBlazor.Storage
 {
     /// <summary>
     /// 同步本地存储接口
