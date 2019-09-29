@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <Import Project="../../../build/version.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <!-- Disable warning for Controller/Action/Method not have block comment -->
+    <NoWarn>$(NoWarn);1573;1591;1701;1702;1705;1712</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>DCBlazor.Storage</AssemblyName>
+    <RootNamespace>DCBlazor.Storage</RootNamespace>
+    <Product>$(AssemblyName)</Product>
+    <AssemblyTitle>极思灵创Blazor本地存储组件</AssemblyTitle>
+    <Description>$(AssemblyName)是武汉极思灵创科技有限公司基于Blazor的前端本地存储组件。</Description>
+    <Company>武汉极思灵创科技有限公司</Company>
+    <Copyright>©2002-2019 $(Company)开发团队</Copyright>
+    <Deterministic>false</Deterministic>
+    <OutputPath>..\..\..\output\release\</OutputPath>
+    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+    <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
+    <LangVersion>8.0</LangVersion>
+    <TypeScriptToolsVersion>Lastest</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Authors>丁川</Authors>
+    <PackageReleaseNotes>Blazor应用程序中的前端本地存储组件</PackageReleaseNotes>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Blazor</ProjectUrl>
+    <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Blazor</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>DingChuan;DC;Berin;$(AssemblyName);DotNetCore;AspNetCore;Core;Blazor;LocalStorage;Razor Components;</PackageTags>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSource>true</IncludeSource>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
