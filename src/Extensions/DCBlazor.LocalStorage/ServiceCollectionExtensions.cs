@@ -18,7 +18,9 @@ namespace DCBlazor.Storage
         {
             return services
                 .AddScoped<ILocalStorageService, LocalStorageService>()
-                .AddScoped<ISyncLocalStorageService, LocalStorageService>();
+                .AddScoped<ISyncLocalStorageService, LocalStorageService>()
+                .AddScoped<ISessionStorageService, SessionStorageService>()
+                .AddScoped<ISyncSessionStorageService, SessionStorageService>();
         }
     }
 }

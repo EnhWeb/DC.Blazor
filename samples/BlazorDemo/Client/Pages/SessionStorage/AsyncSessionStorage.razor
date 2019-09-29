@@ -1,0 +1,103 @@
+﻿@page "/AsyncSessionStorage"
+@inject ISessionStorageService sessionStorage
+
+<h1>DcBlazor 会话存储案例</h1>
+
+<hr class="mb-5" />
+
+<div class="row mb-5">
+
+    <div class="col-md-4">
+        <h5>将项目添加到会话存储</h5>
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="输入一个值" @bind="Name" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" @onclick="SaveName">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h5>从会话存储中删除项目</h5>
+        <button class="btn btn-primary" @onclick="RemoveName">移除项目</button>
+    </div>
+
+    <div class="col-md-4">
+        <h5>清除会话存储</h5>
+        <button class="btn btn-primary" @onclick="ClearSessionStorage">清除所有</button>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h5>从会话存储读取值</h5>
+        @NameFromSessionStorage
+    </div>
+
+    <div class="col-md-4">
+        <h5>会话存储中的项目</h5>
+        @ItemsInSessionStorage
+    </div>
+</div>
+
+@code {
+
+    string NameFromSessionStorage { get; set; }
+    int ItemsInSessionStorage { get; set; }
+    string Name { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetNameFromSessionStorage();
+        await GetSessionStorageLength();
+
+        sessionStorage.Changed += (sender, e) =>
+        {
+            Console.WriteLine($"键{e.Key}的值从{e.OldValue}更改为{e.NewValue}");
+        };
+    }
+
+    async Task SaveName()
+    {
+        await sessionStorage.SetItemAsync("name", Name);
+        await GetNameFromSessionStorage();
+        await GetSessionStorageLength();
+
+        Name = "";
+    }
+
+    async Task GetNameFromSessionStorage()
+    {
+        NameFromSessionStorage = await sessionStorage.GetItemAsync<string>("name");
+
+        if (string.IsNullOrEmpty(NameFromSessionStorage))
+        {
+            NameFromSessionStorage = "没有值";
+        }
+    }
+
+    async Task RemoveName()
+    {
+        await sessionStorage.RemoveItemAsync("name");
+        await GetNameFromSessionStorage();
+        await GetSessionStorageLength();
+    }
+
+    async Task ClearSessionStorage()
+    {
+        Console.WriteLine("开始清除...");
+        await sessionStorage.ClearAsync();
+        Console.WriteLine("正在从本地存储获取键名的值...");
+        await GetNameFromSessionStorage();
+        Console.WriteLine("开始获取长度...");
+        await GetSessionStorageLength();
+    }
+
+    async Task GetSessionStorageLength()
+    {
+        Console.WriteLine(await sessionStorage.LengthAsync());
+        ItemsInSessionStorage = await sessionStorage.LengthAsync();
+    }
+
+}

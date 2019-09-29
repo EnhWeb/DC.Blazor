@@ -1,7 +1,7 @@
-﻿@page "/AsynclocalStorage"
-@inject ILocalStorageService localStorage
+﻿@page "/SynclocalStorage"
+@inject ISyncLocalStorageService localStorage
 
-<h1>DcBlazor 本地存储案例</h1>
+<h1>非异步本地存储</h1>
 
 <hr class="mb-5" />
 
@@ -12,19 +12,19 @@
         <div class="input-group">
             <input class="form-control" type="text" placeholder="Enter a value" @bind="Name" />
             <div class="input-group-append">
-                <button class="btn btn-primary" @onclick="SaveName">Save</button>
+                <button class="btn btn-primary" @onclick="SaveName">保存</button>
             </div>
         </div>
     </div>
 
     <div class="col-md-4">
         <h5>从本地存储中删除项目</h5>
-        <button class="btn btn-primary" @onclick="RemoveName">Remove Item</button>
+        <button class="btn btn-primary" @onclick="RemoveName">移除项目</button>
     </div>
 
     <div class="col-md-4">
         <h5>清除本地存储</h5>
-        <button class="btn btn-primary" @onclick="ClearLocalStorage">Clear All</button>
+        <button class="btn btn-primary" @onclick="ClearLocalStorage">清除所有</button>
     </div>
 </div>
 
@@ -39,22 +39,22 @@
         <h5>本地存储中的项目</h5>
         @ItemsInLocalStorage
     </div>
-
     <div class="col-md-4">
         <h5>项目在本地存储中</h5>@(ItemExist)
     </div>
 </div>
 
 @code {
+
     string NameFromLocalStorage { get; set; }
     int ItemsInLocalStorage { get; set; }
     string Name { get; set; }
     bool ItemExist { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        await GetNameFromLocalStorage();
-        await GetLocalStorageLength();
+        GetNameFromLocalStorage();
+        GetLocalStorageLength();
 
         localStorage.Changed += (sender, e) =>
         {
@@ -62,18 +62,19 @@
         };
     }
 
-    async Task SaveName()
+    void SaveName()
     {
-        await localStorage.SetItemAsync("name", Name);
-        await GetNameFromLocalStorage();
-        await GetLocalStorageLength();
+        Console.WriteLine(Name);
+        localStorage.SetItem("name", Name);
+        GetNameFromLocalStorage();
+        GetLocalStorageLength();
 
         Name = "";
     }
 
-    async Task GetNameFromLocalStorage()
+    void GetNameFromLocalStorage()
     {
-        NameFromLocalStorage = await localStorage.GetItemAsync<string>("name");
+        NameFromLocalStorage = localStorage.GetItem<string>("name");
 
         if (string.IsNullOrEmpty(NameFromLocalStorage))
         {
@@ -81,27 +82,28 @@
         }
     }
 
-    async Task RemoveName()
+    void RemoveName()
     {
-        await localStorage.RemoveItemAsync("name");
-        await GetNameFromLocalStorage();
-        await GetLocalStorageLength();
+        localStorage.RemoveItem("name");
+        GetNameFromLocalStorage();
+        GetLocalStorageLength();
     }
 
-    async Task ClearLocalStorage()
+    void ClearLocalStorage()
     {
         Console.WriteLine("开始清除...");
-        await localStorage.ClearAsync();
+        localStorage.Clear();
         Console.WriteLine("正在从本地存储获取键名的值...");
-        await GetNameFromLocalStorage();
+        GetNameFromLocalStorage();
         Console.WriteLine("开始获取长度...");
-        await GetLocalStorageLength();
+        GetLocalStorageLength();
     }
 
-    async Task GetLocalStorageLength()
+    void GetLocalStorageLength()
     {
-        Console.WriteLine(await localStorage.LengthAsync());
-        ItemsInLocalStorage = await localStorage.LengthAsync();
-        ItemExist = await localStorage.ContainKeyAsync("name");
+        Console.WriteLine(localStorage.Length());
+        ItemsInLocalStorage = localStorage.Length();
+        ItemExist = localStorage.ContainKey("name");
     }
+
 }
