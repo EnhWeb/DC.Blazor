@@ -1,9 +1,0 @@
-﻿@inherits DBlazor.Base.BaseDropdownDivider
-@if ( !ComponentMapper.HasRegistration( this ) )
-{
-    <div class="@ClassMapper.Class" />
-}
-else
-{
-    @RenderCustomComponent()
-}
