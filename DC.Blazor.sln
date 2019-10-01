@@ -22,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Server", "sample
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Shared", "samples\BlazorDemo\Shared\BlazorDemo.Shared.csproj", "{479E7CD6-8133-4E17-B621-357AAA76CDC3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor.LocalStorage", "src\Extensions\DCBlazor.LocalStorage\DCBlazor.LocalStorage.csproj", "{E4960B50-10FF-4B5F-A785-5D9125DFACA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor.LocalStorage", "src\Extensions\DCBlazor.LocalStorage\DCBlazor.Storage.csproj", "{E4960B50-10FF-4B5F-A785-5D9125DFACA9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor", "src\DCBlazor\DCBlazor.csproj", "{A87348D9-3058-43FB-8B3B-B43D4AC6A743}"
 EndProject
