@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{3EFB6087-819B-422C-A5A2-C9C8CEF2CCC5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorDemo", "BlazorDemo", "{333D9B66-5808-4345-AEDA-C07AEC278794}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorDemoForWebAssembly", "BlazorDemoForWebAssembly", "{333D9B66-5808-4345-AEDA-C07AEC278794}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Client", "samples\BlazorDemo\Client\BlazorDemo.Client.csproj", "{FA9F609A-DC92-4814-8E96-EA3B606F1AE8}"
 EndProject
@@ -22,11 +22,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Server", "sample
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo.Shared", "samples\BlazorDemo\Shared\BlazorDemo.Shared.csproj", "{479E7CD6-8133-4E17-B621-357AAA76CDC3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor.LocalStorage", "src\Extensions\DCBlazor.LocalStorage\DCBlazor.Storage.csproj", "{E4960B50-10FF-4B5F-A785-5D9125DFACA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor.Storage", "src\Extensions\DCBlazor.LocalStorage\DCBlazor.Storage.csproj", "{E4960B50-10FF-4B5F-A785-5D9125DFACA9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor", "src\DCBlazor\DCBlazor.csproj", "{A87348D9-3058-43FB-8B3B-B43D4AC6A743}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCBlazor.LayUI", "src\DCBlazor.LayUI\DCBlazor.LayUI.csproj", "{7195F014-B209-4A9F-B8F5-CF63FED5256E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorDemoForServer", "BlazorDemoForServer", "{9BBDFDEA-2983-47BB-B246-9967C14B0030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlazor", "samples\DemoBlazor\DemoBlazor.csproj", "{578F160C-215C-43C3-B989-48455E1E279F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +62,10 @@ Global
 		{7195F014-B209-4A9F-B8F5-CF63FED5256E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7195F014-B209-4A9F-B8F5-CF63FED5256E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7195F014-B209-4A9F-B8F5-CF63FED5256E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578F160C-215C-43C3-B989-48455E1E279F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578F160C-215C-43C3-B989-48455E1E279F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578F160C-215C-43C3-B989-48455E1E279F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578F160C-215C-43C3-B989-48455E1E279F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,8 @@ Global
 		{E4960B50-10FF-4B5F-A785-5D9125DFACA9} = {3EFB6087-819B-422C-A5A2-C9C8CEF2CCC5}
 		{A87348D9-3058-43FB-8B3B-B43D4AC6A743} = {AC1D4565-7AF5-470F-AC01-6821B26D8870}
 		{7195F014-B209-4A9F-B8F5-CF63FED5256E} = {AC1D4565-7AF5-470F-AC01-6821B26D8870}
+		{9BBDFDEA-2983-47BB-B246-9967C14B0030} = {91AC3A58-8BCF-4A41-A97E-EABBFA8A2B3C}
+		{578F160C-215C-43C3-B989-48455E1E279F} = {9BBDFDEA-2983-47BB-B246-9967C14B0030}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3A1978C-8396-4E88-93CA-329D2365BFC1}
